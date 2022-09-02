@@ -1,6 +1,7 @@
 module.exports = {
   extends: ['@commitlint/config-conventional', 'cz'],
   rules: {
+    // <type> 选项
     'type-enum': [
       2,
       'always',
@@ -27,10 +28,12 @@ module.exports = {
     'type-case': [2, 'always', 'lower-case'],
     // <type> 不能为空
     'type-empty': [2, 'never'],
-    // <scope> 范围不能为空
-    'scope-empty': [2, 'never'],
+    // <scope> 范围选项
+    'scope-enum': [0, 'always'],
     // <scope> 范围格式
     'scope-case': [0],
+    // <scope> 范围是否为空
+    'scope-empty': [0],
     // <subject> 主要 message 不能为空
     'subject-empty': [2, 'never'],
     // <subject> 以什么为结束标志，禁用

@@ -7,9 +7,9 @@ const routes: Array<RouteRecordRaw> = [
     meta: {
       title: '登录',
       keepAlive: true,
-      requireAuth: false,
+      requireAuth: false
     },
-    component: () => import('@/views/login.vue'),
+    component: () => import('@/views/login.vue')
   },
   {
     path: '/',
@@ -17,14 +17,14 @@ const routes: Array<RouteRecordRaw> = [
     meta: {
       title: '首页',
       keepAlive: true,
-      requireAuth: true,
+      requireAuth: true
     },
-    component: () => import('@/views/home.vue'),
-  },
+    component: () => import('@/views/home.vue')
+  }
 ]
 
 const router = createRouter({
   history: createWebHistory(),
-  routes,
+  routes
 })
 export default router
