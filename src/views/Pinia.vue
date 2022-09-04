@@ -13,10 +13,12 @@ const resetName = () => {
 <template>
   <div class="text-4xl text-blue-500 font-bold mb-6">Pinia 简单使用</div>
 
-  <div class="grid gap-y-4">
+  <div class="gap-y-4">
     <div class="text-2xl font-bold mb-2">{{ userStore.name }}</div>
-    <el-button type="info" text bg @click="changeName">修改store中name的值为：李四</el-button>
-    <el-button type="warning" text bg @click="resetName">重置</el-button>
+    <div>
+      <el-button type="info" text bg @click="changeName">修改store中name的值为：李四</el-button>
+      <el-button type="warning" text bg @click="resetName">重置</el-button>
+    </div>
   </div>
 
   <div class="mt-10">
