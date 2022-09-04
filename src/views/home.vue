@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+// import { useLogin } from '@/utils/api'
+// let res = await useLogin('18388888888', '123456')
+// console.log(res)
+</script>
 
 <template>
   <div class="text-4xl text-blue-500 font-bold mb-6">Vite + Vue3 template</div>

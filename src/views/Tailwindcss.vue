@@ -11,10 +11,10 @@
 
   <div class="text-2xl font-bold mb-2 mt-6">边框圆角</div>
   <div class="flex gap-x-4">
-    <div class="rounded-sm w-20 h-20 bg-blue-500"></div>
-    <div class="rounded w-20 h-20 bg-blue-500"></div>
-    <div class="rounded-md w-20 h-20 bg-blue-500"></div>
-    <div class="rounded-lg w-20 h-20 bg-blue-500"></div>
+    <div class="rounded-sm w-20 h-20 bg-sky-500"></div>
+    <div class="rounded w-20 h-20 bg-sky-500"></div>
+    <div class="rounded-md w-20 h-20 bg-sky-500"></div>
+    <div class="rounded-lg w-20 h-20 bg-sky-500"></div>
   </div>
 
   <div class="mt-10">
