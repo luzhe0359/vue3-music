@@ -3,6 +3,9 @@ lockfileVersion: 5.4
 specifiers:
   '@commitlint/cli': ^17.1.2
   '@commitlint/config-conventional': ^17.1.0
+  '@icon-park/vue-next': ^1.4.2
+  '@types/lodash': ^4.14.184
+  '@types/lodash-es': ^4.17.6
   '@types/node': ^18.7.14
   '@typescript-eslint/eslint-plugin': ^5.36.1
   '@typescript-eslint/parser': ^5.36.1
@@ -15,6 +18,7 @@ specifiers:
   commitlint-config-cz: ^0.13.3
   cz-conventional-changelog: ^3.3.0
   cz-customizable: ^6.9.2
+  dayjs: ^1.11.5
   element-plus: ^2.2.15
   eslint: ^8.23.0
   eslint-config-prettier: ^8.5.0
@@ -22,10 +26,12 @@ specifiers:
   eslint-plugin-vue: ^9.4.0
   husky: ^8.0.1
   lint-staged: ^13.0.3
+  lodash: ^4.17.21
   pinia: ^2.0.21
   postcss: ^8.4.16
   prettier: ^2.7.1
   sass: ^1.54.8
+  swiper: ^8.3.2
   tailwindcss: ^3.1.8
   typescript: ^4.6.4
   unplugin-auto-import: ^0.11.2
@@ -36,17 +42,23 @@ specifiers:
   vue-tsc: ^0.39.5
 
 dependencies:
+  '@icon-park/vue-next': registry.npmmirror.com/@icon-park/vue-next/1.4.2_vue@3.2.38
+  '@types/lodash-es': registry.npmmirror.com/@types/lodash-es/4.17.6
   '@vueuse/components': registry.npmmirror.com/@vueuse/components/9.1.1_vue@3.2.38
   '@vueuse/core': registry.npmmirror.com/@vueuse/core/9.1.1_vue@3.2.38
   axios: registry.npmmirror.com/axios/0.27.2
+  dayjs: registry.npmmirror.com/dayjs/1.11.5
   element-plus: registry.npmmirror.com/element-plus/2.2.15_vue@3.2.38
+  lodash: registry.npmmirror.com/lodash/4.17.21
   pinia: registry.npmmirror.com/pinia/2.0.21_pj7ch6rmow6odq73xb5hfvge3q
+  swiper: registry.npmmirror.com/swiper/8.3.2
   vue: registry.npmmirror.com/vue/3.2.38
   vue-router: registry.npmmirror.com/vue-router/4.1.5_vue@3.2.38
 
 devDependencies:
   '@commitlint/cli': registry.npmmirror.com/@commitlint/cli/17.1.2
   '@commitlint/config-conventional': registry.npmmirror.com/@commitlint/config-conventional/17.1.0
+  '@types/lodash': registry.npmmirror.com/@types/lodash/4.14.184
   '@types/node': registry.npmmirror.com/@types/node/18.7.14
   '@typescript-eslint/eslint-plugin': registry.npmmirror.com/@typescript-eslint/eslint-plugin/5.36.1_lbwfnm54o3pmr3ypeqp3btnera
   '@typescript-eslint/parser': registry.npmmirror.com/@typescript-eslint/parser/5.36.1_yqf6kl63nyoq5megxukfnom5rm
@@ -430,6 +442,18 @@ packages:
     version: 1.2.1
     dev: true
 
+  registry.npmmirror.com/@icon-park/vue-next/1.4.2_vue@3.2.38:
+    resolution: {integrity: sha512-+QklF255wkfBOabY+xw6FAI0Bwln/RhdwCunNy/9sKdKuChtaU67QZqU67KGAvZUTeeBgsL+yaHHxqfQeGZXEQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@icon-park/vue-next/-/vue-next-1.4.2.tgz}
+    id: registry.npmmirror.com/@icon-park/vue-next/1.4.2
+    name: '@icon-park/vue-next'
+    version: 1.4.2
+    engines: {node: '>= 8.0.0', npm: '>= 5.0.0'}
+    peerDependencies:
+      vue: 3.x
+    dependencies:
+      vue: registry.npmmirror.com/vue/3.2.38
+    dev: false
+
   registry.npmmirror.com/@jridgewell/resolve-uri/3.1.0:
     resolution: {integrity: sha512-F2msla3tad+Mfht5cJq7LSXcdudKTWCVYUgw6pLFOOHSTtZlj6SWNYAp+AhuqLmWdBO2X5hPrLcu8cVP8fy28w==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@jridgewell/resolve-uri/-/resolve-uri-3.1.0.tgz}
     name: '@jridgewell/resolve-uri'
@@ -526,7 +550,7 @@ packages:
     dev: true
 
   registry.npmmirror.com/@types/lodash-es/4.17.6:
-    resolution: {integrity: sha512-R+zTeVUKDdfoRxpAryaQNRKk3105Rrgx2CFRClIgRGaqDTdjsm8h6IYA8ir584W3ePzkZfst5xIgDwYrlh9HLg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/lodash-es/-/lodash-es-4.17.6.tgz}
+    resolution: {integrity: sha512-R+zTeVUKDdfoRxpAryaQNRKk3105Rrgx2CFRClIgRGaqDTdjsm8h6IYA8ir584W3ePzkZfst5xIgDwYrlh9HLg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/lodash-es/-/lodash-es-4.17.6.tgz}
     name: '@types/lodash-es'
     version: 4.17.6
     dependencies:
@@ -534,10 +558,9 @@ packages:
     dev: false
 
   registry.npmmirror.com/@types/lodash/4.14.184:
-    resolution: {integrity: sha512-RoZphVtHbxPZizt4IcILciSWiC6dcn+eZ8oX9IWEYfDMcocdd42f7NPI6fQj+6zI8y4E0L7gu2pcZKLGTRaV9Q==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/lodash/-/lodash-4.14.184.tgz}
+    resolution: {integrity: sha512-RoZphVtHbxPZizt4IcILciSWiC6dcn+eZ8oX9IWEYfDMcocdd42f7NPI6fQj+6zI8y4E0L7gu2pcZKLGTRaV9Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/lodash/-/lodash-4.14.184.tgz}
     name: '@types/lodash'
     version: 4.14.184
-    dev: false
 
   registry.npmmirror.com/@types/minimist/1.2.2:
     resolution: {integrity: sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/minimist/-/minimist-1.2.2.tgz}
@@ -1708,7 +1731,7 @@ packages:
     dev: true
 
   registry.npmmirror.com/dayjs/1.11.5:
-    resolution: {integrity: sha512-CAdX5Q3YW3Gclyo5Vpqkgpj8fSdLQcRuzfX6mC6Phy0nfJ0eGYOeS7m4mt2plDWLAtA4TqTakvbboHvUxfe4iA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/dayjs/-/dayjs-1.11.5.tgz}
+    resolution: {integrity: sha512-CAdX5Q3YW3Gclyo5Vpqkgpj8fSdLQcRuzfX6mC6Phy0nfJ0eGYOeS7m4mt2plDWLAtA4TqTakvbboHvUxfe4iA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/dayjs/-/dayjs-1.11.5.tgz}
     name: dayjs
     version: 1.11.5
     dev: false
@@ -1839,6 +1862,14 @@ packages:
     dependencies:
       esutils: registry.npmmirror.com/esutils/2.0.3
     dev: true
+
+  registry.npmmirror.com/dom7/4.0.4:
+    resolution: {integrity: sha512-DSSgBzQ4rJWQp1u6o+3FVwMNnT5bzQbMb+o31TjYYeRi05uAcpF8koxdfzeoe5ElzPmua7W7N28YJhF7iEKqIw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/dom7/-/dom7-4.0.4.tgz}
+    name: dom7
+    version: 4.0.4
+    dependencies:
+      ssr-window: registry.npmmirror.com/ssr-window/4.0.2
+    dev: false
 
   registry.npmmirror.com/dot-prop/5.3.0:
     resolution: {integrity: sha512-QM8q3zDe58hqUqjraQOmzZ1LIH9SWQJTlEKCH4kJ2oQvLZk7RbQXvtDM2XEq3fwkV9CCvvH4LA0AV+ogFsBM2Q==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/dot-prop/-/dot-prop-5.3.0.tgz}
@@ -3359,7 +3390,7 @@ packages:
     dev: true
 
   registry.npmmirror.com/lodash/4.17.21:
-    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/lodash/-/lodash-4.17.21.tgz}
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/lodash/-/lodash-4.17.21.tgz}
     name: lodash
     version: 4.17.21
 
@@ -4500,6 +4531,12 @@ packages:
       readable-stream: registry.npmmirror.com/readable-stream/3.6.0
     dev: true
 
+  registry.npmmirror.com/ssr-window/4.0.2:
+    resolution: {integrity: sha512-ISv/Ch+ig7SOtw7G2+qkwfVASzazUnvlDTwypdLoPoySv+6MqlOV10VwPSE6EWkGjhW50lUmghPmpYZXMu/+AQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/ssr-window/-/ssr-window-4.0.2.tgz}
+    name: ssr-window
+    version: 4.0.2
+    dev: false
+
   registry.npmmirror.com/string-argv/0.3.1:
     resolution: {integrity: sha512-a1uQGz7IyVy9YwhqjZIZu1c8JO8dNIe20xBmSS6qu9kv++k3JGzCVmprbNN5Kn+BgzD5E7YYwg1CcjuJMRNsvg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/string-argv/-/string-argv-0.3.1.tgz}
     name: string-argv
@@ -4652,6 +4689,17 @@ packages:
     version: 1.0.0
     engines: {node: '>= 0.4'}
     dev: true
+
+  registry.npmmirror.com/swiper/8.3.2:
+    resolution: {integrity: sha512-8wsC7ORYvVSnLUoxs2+xmfLrDPNjBVQXMCFbOlqtHeON6wtu/blOyySDr8TCBCdse1bdcIbn7m8xJNxVFL8o4Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/swiper/-/swiper-8.3.2.tgz}
+    name: swiper
+    version: 8.3.2
+    engines: {node: '>= 4.7.0'}
+    requiresBuild: true
+    dependencies:
+      dom7: registry.npmmirror.com/dom7/4.0.4
+      ssr-window: registry.npmmirror.com/ssr-window/4.0.2
+    dev: false
 
   registry.npmmirror.com/tailwindcss/3.1.8:
     resolution: {integrity: sha512-YSneUCZSFDYMwk+TGq8qYFdCA3yfBRdBlS7txSq0LUmzyeqRe3a8fBQzbz9M3WS/iFT4BNf/nmw9mEzrnSaC0g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/tailwindcss/-/tailwindcss-3.1.8.tgz}

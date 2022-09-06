@@ -1,9 +1,10 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import store from './store'
+import store from './stores'
 import router from './router'
 
-import 'tailwindcss/tailwind.css'
-import './style.css'
+import '@/utils/extend'
+import '@/assets/base.scss'
+import '@/assets/theme.scss'
 
 createApp(App).use(router).use(store).mount('#app')

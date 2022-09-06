@@ -14,17 +14,23 @@
     "commit": "git-cz"
   },
   "dependencies": {
+    "@icon-park/vue-next": "^1.4.2",
+    "@types/lodash-es": "^4.17.6",
     "@vueuse/components": "^9.1.1",
     "@vueuse/core": "^9.1.1",
     "axios": "^0.27.2",
+    "dayjs": "^1.11.5",
     "element-plus": "^2.2.15",
+    "lodash": "^4.17.21",
     "pinia": "^2.0.21",
+    "swiper": "^8.3.2",
     "vue": "^3.2.37",
     "vue-router": "^4.1.5"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
+    "@types/lodash": "^4.14.184",
     "@types/node": "^18.7.14",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",

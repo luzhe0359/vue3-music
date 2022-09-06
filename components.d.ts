@@ -7,11 +7,26 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    Banner: typeof import('./src/components/common/Banner.vue')['default']
+    copy: typeof import('./src/components/layout/header/Header copy.vue')['default']
+    CoverPlay: typeof import('./src/components/common/CoverPlay.vue')['default']
+    ElAvatar: typeof import('element-plus/es')['ElAvatar']
     ElButton: typeof import('element-plus/es')['ElButton']
+    ElImage: typeof import('element-plus/es')['ElImage']
+    ElInput: typeof import('element-plus/es')['ElInput']
     ElLink: typeof import('element-plus/es')['ElLink']
+    ElPopover: typeof import('element-plus/es')['ElPopover']
     ElRow: typeof import('element-plus/es')['ElRow']
-    Menu: typeof import('./src/components/Menu.vue')['default']
+    ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
+    Header: typeof import('./src/components/layout/header/Header.vue')['default']
+    IconPark: typeof import('./src/components/common/IconPark.vue')['default']
+    Menu: typeof import('./src/components/layout/menu/Menu.vue')['default']
+    MenuList: typeof import('./src/components/layout/menu/MenuList.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SearchPop: typeof import('./src/components/layout/header/SearchPop.vue')['default']
+    SearchSuggest: typeof import('./src/components/layout/header/SearchSuggest.vue')['default']
+    Title: typeof import('./src/components/common/Title.vue')['default']
+    UserInfo: typeof import('./src/components/layout/header/UserInfo.vue')['default']
   }
 }
