@@ -44,7 +44,7 @@ body {
 }
 
 .hover-text {
-    // @apply hover: text-emerald-400 cursor-pointer;
+    @apply hover:text-emerald-400 transition-colors cursor-pointer;
 }
 
 .badge {

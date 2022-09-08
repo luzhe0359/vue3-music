@@ -1,3 +1,18 @@
+<script setup lang="ts">
+import { PlayOne, Play, Headset } from '@icon-park/vue-next'
+import IconPark from '@/components/common/IconPark.vue'
+import { useNumberFormat } from '@/utils/number'
+
+defineProps<{
+  picUrl: string
+  playCount?: number
+  name?: string
+  showPlayCount?: boolean
+  onPlay?: () => void
+  video?: boolean
+}>()
+</script>
+
 <template>
   <div class="cover-play-image" :class="{ 'aspect-square': !video, 'aspect-video': video }">
     <el-image :src="picUrl" :alt="name" class="w-full bg-gray-50 object-cover" />
@@ -16,21 +31,6 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-import { PlayOne, Play, Headset } from '@icon-park/vue-next'
-import { useNumberFormat } from '@/utils/number'
-import IconPark from '@/components/common/IconPark.vue'
-
-defineProps<{
-  picUrl: string
-  playCount?: number
-  name?: string
-  showPlayCount?: boolean
-  onPlay?: () => void
-  video?: boolean
-}>()
-</script>
 
 <style lang="scss">
 .cover-play-image {

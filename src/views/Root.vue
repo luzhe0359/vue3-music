@@ -1,7 +1,9 @@
 <script lang="ts" setup>
 import Menu from '@/components/layout/menu/Menu.vue'
 import Header from '@/components/layout/header/Header.vue'
+import Footer from '@/components/layout/footer/Footer.vue'
 </script>
+
 <template>
   <div class="w-screen h-screen flex items-stretch overflow-hidden">
     <div class="w-56 h-screen flex-shrink-0">
@@ -17,6 +19,9 @@ import Header from '@/components/layout/header/Header.vue'
             <RouterView />
           </div>
         </ElScrollbar>
+      </div>
+      <div class="h-20">
+        <Footer />
       </div>
     </div>
   </div>

@@ -1,3 +1,18 @@
+<script setup lang="ts">
+import { onMounted, toRefs } from 'vue'
+import Title from '@/components/common/Title.vue'
+import { usePlayerStore } from '@/stores/player'
+import { useMusicStore } from '@/stores/music'
+
+const { play } = usePlayerStore()
+const { personalizedNewSong } = toRefs(useMusicStore())
+const { getPersonalizedNewSong } = useMusicStore()
+
+onMounted(async () => {
+  await getPersonalizedNewSong()
+})
+</script>
+
 <template>
   <Title title="推荐新音乐" />
   <div class="grid grid-flow-row grid-cols-2 2xl:grid-cols-5 gap-y-2.5 gap-x-5 cursor-pointer">
@@ -14,20 +29,5 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-import { onMounted, toRefs } from 'vue'
-import Title from '@/components/common/Title.vue'
-import { usePlayerStore } from '@/stores/player'
-import { useMusicStore } from '@/stores/music'
-
-const { play } = usePlayerStore()
-const { personalizedNewSong } = toRefs(useMusicStore())
-const { getPersonalizedNewSong } = useMusicStore()
-
-onMounted(async () => {
-  await getPersonalizedNewSong()
-})
-</script>
 
 <style lang="scss"></style>
