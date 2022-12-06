@@ -26,7 +26,7 @@
 .bg-active {
   @apply bg-emerald-400 text-white;
 }
-.text-active{
+.text-active {
   @apply text-emerald-400;
 }
 
@@ -51,11 +51,11 @@
   @apply hover:border-emerald-500 hover:text-emerald-500;
 }
 
-.button-sm{
+.button-sm {
   @apply h-7 text-xs;
 }
 
-.button-dc{
+.button-dc {
   @apply flex bg-[#e6e6e6] rounded justify-center items-center h-8 text-sm transition-all cursor-pointer;
   @apply dark:bg-[#303031] dark:text-white;
   @apply hover:text-emerald-500;

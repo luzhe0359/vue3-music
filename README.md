@@ -1,10 +1,13 @@
 ## Vite + Vue3 + Typescript + Pinia + Vueuse + tailwindcss
+
 > ### 如果觉得项目模板不错的话，欢迎 Star 支持，感谢！
 
 ## 运行步骤
+
 1. 克隆模板
 
 vite + vue3 模板，请切换到 template 分支
+
 ```bash
 # git
 git clone https://github.com/luzhe0359/vue3-music.git

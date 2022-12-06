@@ -2,22 +2,21 @@
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
 import { onMounted, toRefs } from 'vue'
-// import { usePlayerStore } from '@/stores/player'
+import { usePlayerStore } from '@/stores/player'
 import { useCommonStore } from '@/stores/common'
 import type { Banner } from '@/models/banner'
 
 const { banners } = toRefs(useCommonStore())
 const { getBanners } = useCommonStore()
+const { play } = usePlayerStore()
 onMounted(async () => {
   await getBanners()
 })
 
-// const { play } = usePlayerStore()
-
 const onClick = (banner: Banner) => {
-  //   if (banner.targetType === 1) {
-  //     play(banner.targetId)
-  //   }
+  if (banner.targetType === 1) {
+    play(banner.targetId)
+  }
 }
 </script>
 
