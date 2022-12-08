@@ -14,7 +14,7 @@ export const usePlayerStore = defineStore({
     audio: new Audio(),
     loopType: 0, //循环模式 0-单曲循环 1-列表循环 2-随机播放
     volume: localStorage.getItem(KEYS.volume)?.toInt() || 60, //音量
-    playList: [] as Song[], //播放列表,
+    playList: [] as Song[], //播放列表
     showPlayList: false,
     id: 0,
     url: '',
@@ -60,6 +60,8 @@ export const usePlayerStore = defineStore({
     },
     //播放列表里面添加音乐
     pushPlayList(replace: boolean, ...list: Song[]) {
+      console.log('列表')
+
       if (replace) {
         this.playList = list
         return

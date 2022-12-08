@@ -22,7 +22,6 @@ const searchInput = debounce((value: string | number) => suggest(), 500, { maxWa
 const searchHot = ref<SearchHotDetail[]>([])
 onMounted(async () => {
   searchHot.value = await useSearchHotDetail()
-  console.log(searchHot)
 })
 </script>
 
@@ -43,7 +42,7 @@ onMounted(async () => {
       <el-scrollbar>
         <div class="pb-2.5">
           <div v-if="showHot">
-            <div class="pt-2 pb-1.5 px-2.5">热门搜索</div>
+            <div class="pt-2 pb-1.5 px-2.5 font-bold">热门搜索</div>
             <div>
               <div
                 v-for="(item, index) in searchHot"

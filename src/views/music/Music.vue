@@ -1,7 +1,31 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useMusicMenu } from '@/views/music/MusicController'
+const { menus, currentMenu, handleTabClick } = useMusicMenu()
+</script>
 
 <template>
-  <div class="text-4xl text-blue-500 font-bold">Music</div>
+  <div class="px-5 music">
+    <h1 class="text-3xl font-bold pt-8 pb-4">音乐馆</h1>
+    <el-affix target=".music" :offset="56">
+      <div class="bg-view">
+        <el-tabs v-model="currentMenu" @tab-click="handleTabClick">
+          <el-tab-pane v-for="menu in menus" :key="menu.name" :label="menu.label" :name="menu.name" />
+        </el-tabs>
+      </div>
+    </el-affix>
+    <div class="mt-5">
+      <RouterView />
+    </div>
+  </div>
 </template>
 
-<style scoped></style>
+<style lang="scss">
+.music {
+  .el-tabs__nav-wrap::after {
+    height: 0;
+  }
+  .el-tabs__header {
+    @apply m-0;
+  }
+}
+</style>

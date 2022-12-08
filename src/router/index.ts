@@ -20,7 +20,7 @@ const routes: Array<RouteRecordRaw> = [
         path: 'music',
         name: 'music',
         component: () => import('@/views/music/Music.vue'),
-        // redirect: { name: 'picked' },
+        redirect: { name: 'picked' },
         meta: {
           menu: 'music'
         },
@@ -37,22 +37,22 @@ const routes: Array<RouteRecordRaw> = [
           {
             path: 'toplist',
             name: 'toplist',
-            component: () => import('@/views/music/toplist/TopList.vue'),
+            component: () => import('@/views/music/topList/TopList.vue'),
             meta: {
               menu: 'music',
               keepAlive: true
             }
           },
-          {
-            path: 'artist',
-            name: 'artist',
-            component: () => import('@/views/music/artist/Artist.vue'),
-            meta: {
-              menu: 'music',
-              title: '歌手',
-              keepAlive: true
-            }
-          },
+          // {
+          //   path: 'artist',
+          //   name: 'artist',
+          //   component: () => import('@/views/music/artist/Artist.vue'),
+          //   meta: {
+          //     menu: 'music',
+          //     title: '歌手',
+          //     keepAlive: true
+          //   }
+          // },
           {
             path: 'category',
             name: 'category',
