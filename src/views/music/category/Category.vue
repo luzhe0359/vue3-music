@@ -1,17 +1,9 @@
 <script setup lang="ts">
-import { onMounted, toRefs, ref, reactive } from 'vue'
-import { useRouter } from 'vue-router'
+import { onMounted, ref, reactive } from 'vue'
 import PlaylistHot from './PlaylistHot.vue'
-import { useMusicStore } from '@/stores/music'
 import CoverPlay from '@/components/common/CoverPlay.vue'
-import type { TopListDetail } from '@/models/toplist_detail'
 import type { PlayListDetail } from '@/models/playlist'
 import { useTopPlaylistHighquality } from '@/utils/api'
-
-const { topListDetailData } = toRefs(useMusicStore())
-const { getTopListDetailData } = useMusicStore()
-
-const router = useRouter()
 
 const list = ref<PlayListDetail[]>()
 const pageData = reactive({
@@ -24,7 +16,7 @@ const pageData = reactive({
 })
 
 const changeTag = (tag: string) => {
-  console.log(tag)
+  list.value = []
   pageData.cat = tag
   pageData.before = 0
   pageData.more = false
@@ -53,17 +45,16 @@ const getData = async () => {
   } catch (error) {}
 }
 
-onMounted(getData)
-
-const toPlaylist = (topListDetail: TopListDetail) => {
-  // router.push({ name: 'playlist', query: { id: topListDetail.id } })
+const loadMore = () => {
+  getData()
 }
+
+onMounted(getData)
 </script>
 
 <template>
   <PlaylistHot @change-tag="changeTag" />
-  <div class="py-5 text-xl text-blod">全部歌单</div>
-  <!-- gap-5 grid grid-flow-row grid-cols-3 lg:grid-cols-5 2xl:grid-cols-7 -->
+  <div class="py-5 text-xl text-blod">{{ pageData.cat }}歌单</div>
   <div class="grid grid-flow-row grid-cols-3 xl:grid-cols-5 2xl:grid-cols-7 gap-5">
     <div v-for="item in list" :key="item.id">
       <CoverPlay :name="item.name" :pic-url="item.coverImgUrl" show-play-count :play-count="item.playCount" />
@@ -71,6 +62,14 @@ const toPlaylist = (topListDetail: TopListDetail) => {
       <div class="mt-2 text-xs text-main text-dc truncate">{{ item.creator.nickname }}</div>
     </div>
   </div>
+  <div class="pt-8">
+    <el-button text type="primary" class="w-full text-full" :loading="pageData.loading" @click="loadMore">加载更多</el-button>
+  </div>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+.el-button:hover {
+  color: var(--el-color-primary-light-3);
+  background-color: transparent !important;
+}
+</style>
