@@ -43,16 +43,16 @@ const routes: Array<RouteRecordRaw> = [
               keepAlive: true
             }
           },
-          // {
-          //   path: 'artist',
-          //   name: 'artist',
-          //   component: () => import('@/views/music/artist/Artist.vue'),
-          //   meta: {
-          //     menu: 'music',
-          //     title: '歌手',
-          //     keepAlive: true
-          //   }
-          // },
+          {
+            path: 'artist',
+            name: 'artist',
+            component: () => import('@/views/music/artist/Artist.vue'),
+            meta: {
+              menu: 'music',
+              title: '歌手',
+              keepAlive: true
+            }
+          },
           {
             path: 'category',
             name: 'category',

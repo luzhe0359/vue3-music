@@ -8,7 +8,7 @@ const { menus, currentKey, click } = userMenu()
 <template>
   <ElScrollbar>
     <div v-for="menuItem in menus" :key="menuItem.name" class="mt-10 pl-6 pr-6 space-y-1.5">
-      <div class="menu-title text-main">{{ menuItem.name }}</div>
+      <div class="menu-title text-main text-dc">{{ menuItem.name }}</div>
       <div
         v-for="menu in menuItem.menus"
         :key="menu.key"

@@ -16,11 +16,11 @@ const pageData = reactive({
 })
 
 const changeTag = (tag: string) => {
-  list.value = []
   pageData.cat = tag
   pageData.before = 0
   pageData.more = false
 
+  list.value = []
   getData()
 }
 
