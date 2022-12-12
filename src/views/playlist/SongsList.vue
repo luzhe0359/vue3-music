@@ -1,0 +1,60 @@
+<script setup lang="ts">
+import { storeToRefs } from 'pinia'
+import { usePlayerStore } from '@/stores/player'
+import { useFormatDuring } from '@/utils/number'
+import type { Song } from '@/models/song'
+
+const { play } = usePlayerStore()
+const { id } = storeToRefs(usePlayerStore())
+
+defineProps<{ songs: Song[] }>()
+
+const tableRowClassName = ({ row, rowIndex }: { row: Song; rowIndex: number }) => {
+  console.log(row.id, id.value)
+
+  return row.id == id.value ? 'playing' : ''
+}
+
+const dblclick = (row: Song, column: any, cell: any, event: Event) => {
+  play(row.id)
+}
+</script>
+
+<template>
+  <el-table :data="songs" style="width: 100%" :row-class-name="tableRowClassName" @cell-dblclick="dblclick">
+    <el-table-column type="index" width="50" />
+    <el-table-column label="标题" min-width="150">
+      <template #default="scope">
+        <span>{{ scope.row.name }}</span>
+        <span v-if="scope.row.sq" class="ml-1 text-xs text-active border rounded border-emerald-400">SQ</span>
+      </template>
+    </el-table-column>
+    <el-table-column prop="al.name" label="歌手" />
+    <el-table-column prop="ar[0].name" label="专题" />
+    <el-table-column label="时间">
+      <template #default="scope">
+        {{ useFormatDuring(scope.row.dt / 1000) }}
+      </template>
+    </el-table-column>
+  </el-table>
+</template>
+
+<style lang="scss" scoped>
+.el-button:hover {
+  color: var(--el-color-primary-light-3);
+  background-color: transparent !important;
+}
+.el-table {
+  // 正在播+背景
+  :deep(.playing) {
+    @apply bg-emerald-50 dark:bg-stone-800;
+  }
+  // 去掉表格边框
+  /* :deep(td) {
+    border: none;
+  }
+  :deep(th) {
+    border: none !important;
+  } */
+}
+</style>

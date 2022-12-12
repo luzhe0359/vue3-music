@@ -84,12 +84,12 @@ const routes: Array<RouteRecordRaw> = [
           title: '电台',
           keepAlive: true
         }
+      },
+      {
+        path: 'playlist',
+        name: 'playlist',
+        component: () => import('@/views/playlist/PlayList.vue')
       }
-      // {
-      //   path: 'playlist',
-      //   name: 'playlist',
-      //   component: () => import('@/views/playlist/PlayList.vue')
-      // },
       // {
       //   path: 'artistDetail',
       //   name: 'artistDetail',
