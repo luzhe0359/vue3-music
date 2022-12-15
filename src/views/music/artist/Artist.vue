@@ -157,15 +157,4 @@ onMounted(getData)
   </div>
 </template>
 
-<style lang="scss">
-/* el-divider样式无效bug */
-.el-divider--vertical {
-  display: inline-block;
-  width: 1px;
-  height: 1em;
-  margin: 0 8px;
-  vertical-align: middle;
-  position: relative;
-  border-left: 1px var(--el-border-color) var(--el-border-style);
-}
-</style>
+<style lang="scss"></style>

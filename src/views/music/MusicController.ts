@@ -17,6 +17,10 @@ export function useMusicMenu() {
       name: 'dt'
     },
     {
+      label: '歌单',
+      name: 'category'
+    },
+    {
       label: '排行榜',
       name: 'toplist'
     },
@@ -25,12 +29,8 @@ export function useMusicMenu() {
       name: 'artist'
     },
     {
-      label: '分类歌单',
-      name: 'category'
-    },
-    {
-      label: '数字专辑',
-      name: 'zj'
+      label: '新歌速递',
+      name: 'topsong'
     }
   ]
 

@@ -63,3 +63,21 @@ body {
 .el-tabs__header {
   @apply m-0;
 }
+
+/* el-divider样式无效bug */
+.el-divider--vertical {
+  display: inline-block;
+  width: 1px;
+  height: 1em;
+  margin: 0 8px;
+  vertical-align: middle;
+  position: relative;
+  border-left: 1px var(--el-border-color) var(--el-border-style);
+}
+
+.el-table {
+  // 播放中+背景
+  .table-playing {
+    @apply bg-emerald-50 dark:bg-stone-800;
+  }
+}

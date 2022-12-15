@@ -15,6 +15,7 @@ import type { SearchHotDetail, SearchSuggest } from '@/models/search'
 import type { MvUrl } from '@/models/mv'
 import type { PlayListHot } from '@/models/playlist_hot'
 import type { UserProfile } from '@/models/user'
+import type { TopSong } from '@/models/top_song'
 
 export async function useLogin(phone: string, password: string) {
   return await http.get<{
@@ -188,7 +189,9 @@ export async function useSearchSuggest(keywords: string) {
   return result
 }
 
-export async function useMvDetail(mvid: number) {}
+export async function useMvDetail(mvid: number) {
+  console.log('useMvDetail')
+}
 
 export async function useMvUrl(id: number) {
   const { data } = await http.get<{ data: MvUrl }>('mv/url', { id: id })
@@ -214,4 +217,9 @@ export async function useTopPlaylistHighquality(params?: { limit?: number; befor
     more: boolean
     lasttime: number
   }>('top/playlist/highquality', params)
+}
+
+export async function useTopSong(type: number) {
+  const { data } = await http.get<{ data: TopSong[] }>('top/song', { type })
+  return data
 }

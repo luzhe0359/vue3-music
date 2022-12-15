@@ -31,6 +31,7 @@ const routes: Array<RouteRecordRaw> = [
             component: () => import('@/views/music/picked/Picked.vue'),
             meta: {
               menu: 'music',
+              title: '精选',
               keepAlive: true
             }
           },
@@ -40,6 +41,7 @@ const routes: Array<RouteRecordRaw> = [
             component: () => import('@/views/music/topList/TopList.vue'),
             meta: {
               menu: 'music',
+              title: '排行榜',
               keepAlive: true
             }
           },
@@ -59,7 +61,17 @@ const routes: Array<RouteRecordRaw> = [
             component: () => import('@/views/music/category/Category.vue'),
             meta: {
               menu: 'music',
-              title: '分类歌单',
+              title: '歌单',
+              keepAlive: true
+            }
+          },
+          {
+            path: 'topsong',
+            name: 'topsong',
+            component: () => import('@/views/music/topSong/TopSong.vue'),
+            meta: {
+              menu: 'music',
+              title: '新歌速递',
               keepAlive: true
             }
           }

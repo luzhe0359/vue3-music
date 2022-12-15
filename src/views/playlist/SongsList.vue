@@ -12,7 +12,7 @@ defineProps<{ songs: Song[] }>()
 const tableRowClassName = ({ row, rowIndex }: { row: Song; rowIndex: number }) => {
   console.log(row.id, id.value)
 
-  return row.id == id.value ? 'playing' : ''
+  return row.id == id.value ? 'table-playing' : ''
 }
 
 const dblclick = (row: Song, column: any, cell: any, event: Event) => {
@@ -43,18 +43,5 @@ const dblclick = (row: Song, column: any, cell: any, event: Event) => {
 .el-button:hover {
   color: var(--el-color-primary-light-3);
   background-color: transparent !important;
-}
-.el-table {
-  // 正在播+背景
-  :deep(.playing) {
-    @apply bg-emerald-50 dark:bg-stone-800;
-  }
-  // 去掉表格边框
-  /* :deep(td) {
-    border: none;
-  }
-  :deep(th) {
-    border: none !important;
-  } */
 }
 </style>
