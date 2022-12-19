@@ -9,7 +9,7 @@ import Footer from '@/components/layout/footer/Footer.vue'
     <div class="w-56 h-screen flex-shrink-0">
       <Menu />
     </div>
-    <div class="flex-1 flex flex-col">
+    <div class="flex-1 flex flex-col divider-shadow">
       <div class="h-14">
         <Header />
       </div>
@@ -26,3 +26,9 @@ import Footer from '@/components/layout/footer/Footer.vue'
     </div>
   </div>
 </template>
+<style lang="scss" scoped>
+.divider-shadow {
+  /* box-shadow: -5px 0px 10px 2px #222 inset; */
+  box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.1) !important;
+}
+</style>

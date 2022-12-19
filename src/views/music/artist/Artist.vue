@@ -148,7 +148,7 @@ onMounted(getData)
   <div class="grid grid-flow-row grid-cols-6 xl:grid-cols- 2xl:grid-cols-10 gap-5">
     <div v-for="item in list" :key="item.id" class="flex flex-col items-center">
       <!-- <el-avatar class="w-full" :src="item.img1v1Url + '?param=120y120'" /> -->
-      <img :src="item.img1v1Url + '?param=120y120'" alt="" class="rounded-full cursor-pointer w-full aspect-square object-cover bg-dc" />
+      <img :src="item.img1v1Url + '?param=120y120'" alt="" class="rounded-full cursor-pointer w-full aspect-square object-cover" />
       <div class="mt-2 text-sm">{{ item.name }}</div>
     </div>
   </div>

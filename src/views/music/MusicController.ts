@@ -12,10 +12,10 @@ export function useMusicMenu() {
       label: '精选',
       name: 'picked'
     },
-    {
-      label: '有声电台',
-      name: 'dt'
-    },
+    // {
+    //   label: '有声电台',
+    //   name: 'dt'
+    // },
     {
       label: '歌单',
       name: 'category'

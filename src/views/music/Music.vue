@@ -5,7 +5,7 @@ const { menus, currentMenu, handleTabClick } = useMusicMenu()
 
 <template>
   <div class="px-5 music">
-    <h1 class="text-3xl font-bold pt-8 pb-4">音乐馆</h1>
+    <h1 class="text-3xl font-bold pt-8 pb-4 select-none">音乐馆</h1>
     <el-affix target=".music" :offset="56">
       <div class="bg-view">
         <el-tabs v-model="currentMenu" @tab-click="handleTabClick">

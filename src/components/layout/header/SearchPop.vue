@@ -30,6 +30,7 @@ onMounted(async () => {
     <template #reference>
       <ElInput
         v-model="searchKeyword"
+        class="w-200"
         placeholder="搜索音乐、MV、歌单"
         :prefix-icon="Search"
         clearable

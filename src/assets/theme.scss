@@ -1,26 +1,26 @@
 .bg-main {
   @apply bg-gray-50;
-  @apply dark:bg-[#171718];
+  @apply dark:bg-[#171717];
 }
 
 .hover-bg-main {
   @apply hover:bg-gray-200;
-  @apply dark:hover:bg-stone-700;
+  @apply dark:hover:bg-[#222];
 }
 
 .bg-dc {
   @apply bg-gray-100;
-  @apply dark:bg-stone-800;
+  @apply dark:bg-[#222222];
 }
 
 .bg-view {
   @apply bg-white;
-  @apply dark:bg-[#1e1e1f];
+  @apply dark:bg-[#171717];
 }
 
 .hover-bg-view {
   @apply hover:bg-stone-100;
-  @apply dark:hover:bg-stone-800;
+  @apply dark:hover:bg-[#222];
 }
 
 .bg-active {
@@ -57,6 +57,6 @@
 
 .button-dc {
   @apply flex bg-[#e6e6e6] rounded justify-center items-center h-8 text-sm transition-all cursor-pointer;
-  @apply dark:bg-[#303031] dark:text-white;
+  @apply dark:bg-[#303030] dark:text-white;
   @apply hover:text-emerald-500;
 }

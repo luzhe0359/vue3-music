@@ -1,22 +1,38 @@
 <script lang="ts" setup>
+import { ref, onMounted } from 'vue'
 import { HamburgerButton, Left, Mail, Platte, Right, Search } from '@icon-park/vue-next'
 import { useRouter } from 'vue-router'
 import IconPark from '@/components/common/IconPark.vue'
 import UserInfo from '@/components/layout/header/UserInfo.vue'
 import SearchPop from '@/components/layout/header/SearchPop.vue'
-import { ref } from 'vue'
 
 const iconSize = 22
 
 const router = useRouter()
 
-const mode = ref(false)
+const isDark = ref(false)
 
+// 切换主题
 const changeThemeMode = () => {
-  window.document.documentElement.setAttribute('data-theme', mode.value ? 'dark' : 'light')
-
-  mode.value = !mode.value
+  isDark.value = !isDark.value
+  changeThemeClass()
 }
+// 切换class
+const changeThemeClass = () => {
+  if (isDark.value || (!isDark.value && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark')
+    localStorage.setItem('theme', 'dark')
+  } else {
+    document.documentElement.classList.remove('dark')
+    localStorage.removeItem('theme')
+  }
+}
+
+onMounted(() => {
+  // 获取主题
+  isDark.value = 'theme' in localStorage
+  changeThemeClass()
+})
 </script>
 
 <template>
