@@ -26,45 +26,47 @@ export async function useLogin(phone: string, password: string) {
 }
 
 export async function useLoginStatus() {
-  return await http.get<{
+  const { data } = await http.get<{
     data: {
       code: number
       profile: UserProfile
     }
   }>('login/status')
+
+  return data
 }
 
 export async function useSongUrl(id: number) {
-  const { data } = await http.get<{ data: SongUrl[] }>('/song/url', { id: id })
+  const { data } = await http.get<{ data: SongUrl[] }>('song/url', { id: id })
   return data.first()
 }
 
 export async function useDetail(id: number) {
-  const { songs } = await http.get<{ songs: Song[] }>('/song/detail', {
+  const { songs } = await http.get<{ songs: Song[] }>('song/detail', {
     ids: id
   })
   return songs.first()
 }
 
 export async function useBanner() {
-  const { banners } = await http.get<{ banners: Banner[] }>('/banner', {
+  const { banners } = await http.get<{ banners: Banner[] }>('banner', {
     type: 1
   })
   return banners
 }
 
 export async function usePersonalized() {
-  const { result } = await http.get<{ result: Personalized[] }>('/personalized')
+  const { result } = await http.get<{ result: Personalized[] }>('personalized')
   return result
 }
 
 export async function usePersonalizedNewSong() {
-  const { result } = await http.get<{ result: PersonalizedNewSong[] }>('/personalized/newsong')
+  const { result } = await http.get<{ result: PersonalizedNewSong[] }>('personalized/newsong')
   return result
 }
 
 export async function usePlayListDetail(id: number, s = 8) {
-  const { playlist } = await http.get<{ playlist: PlayListDetail }>('/playlist/detail', { id: id, s: s })
+  const { playlist } = await http.get<{ playlist: PlayListDetail }>('playlist/detail', { id: id, s: s })
   return playlist
 }
 
@@ -76,7 +78,7 @@ export async function usePlayListTrackAll(id: number) {
 }
 
 export async function useTopListDetail() {
-  const { list } = await http.get<{ list: TopListDetail[] }>('/toplist/detail')
+  const { list } = await http.get<{ list: TopListDetail[] }>('toplist/detail')
   return list
 }
 
@@ -222,4 +224,36 @@ export async function useTopPlaylistHighquality(params?: { limit?: number; befor
 export async function useTopSong(type: number) {
   const { data } = await http.get<{ data: TopSong[] }>('top/song', { type })
   return data
+}
+
+// 二维码 key 生成
+export async function useLoginQrKey() {
+  const { data } = await http.get<{
+    data: {
+      code: number
+      unikey: string
+    }
+  }>('login/qr/key')
+  return data.unikey
+}
+
+// 二维码 生成
+export async function useLoginQrCreate(key: string) {
+  const { data } = await http.get<{
+    data: {
+      qrimg: string
+      qrurl: string
+    }
+  }>('login/qr/create', { key, qrimg: true })
+  return data.qrimg
+}
+
+// 二维码 检测扫码状态
+export async function usecheckStatus(key: string) {
+  const { code, cookie } = await http.get<{
+    code: number
+    cookie: string
+    message: string
+  }>('login/qr/check', { key })
+  return { code, cookie }
 }

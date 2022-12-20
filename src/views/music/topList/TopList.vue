@@ -43,7 +43,7 @@ const toPlaylist = (topListDetail: TopListDetail) => {
   <div class="text-xl py-5 font-bold">全球榜</div>
   <div class="grid grid-flow-row grid-cols-5 2xl:lg:grid-cols-10 gap-5">
     <div v-for="item in topListDetailData.slice(4)" :key="item.id" class="flex flex-col rounded-lg cursor-pointer" @click="toPlaylist(item)">
-      <CoverPlay :name="item.name" :pic-url="item.coverImgUrl" show-play-count :play-count="item.playCount" class="w-36 flex-shrink-0" />
+      <CoverPlay :name="item.name" :pic-url="item.coverImgUrl" show-play-count :play-count="item.playCount" />
       <div class="text-xs mt-2">{{ item.name }}</div>
     </div>
   </div>
