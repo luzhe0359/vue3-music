@@ -1,48 +1,52 @@
-## Vite + Vue3 + Typescript + Pinia + Vueuse + tailwindcss
+<div align="center">
+  <h1>VUE3-MUSIC</h1>
+</div>
+<p align="center">
+    <img src="https://img.shields.io/badge/vite-3.0.7-blue" alt="vite">
+    <img src="https://img.shields.io/badge/vue-3.2.37-blue" alt="vue3">
+    <img src="https://img.shields.io/badge/pinia-2.0.21-blue" alt="pinia">
+    <img src="https://img.shields.io/badge/tailwindcss-3.1.8-blue" alt="tailwindcss">
+</p>
 
-> ### 如果觉得项目模板不错的话，欢迎 Star 支持，感谢！
+## 仿网易云音乐
 
-## 运行步骤
+基于 VITE + VUE3 + TS + PINIA + TAILWINDCSS 开发的音乐播放器，界面模仿网易云音乐客户端。
 
-1. 克隆模板
+参考 [SmallRuralDog/vue3-music](https://github.com/SmallRuralDog/vue3-music) 进行开发、改进和完善。
 
-vite + vue3 模板，请切换到 template 分支
+如果觉得项目不错，欢迎 Star 支持，感谢！
 
-```bash
-# git
+## 本地安装
+
+```
 git clone https://github.com/luzhe0359/vue3-music.git
-```
-
-2. 安装依赖
-
-```bash
-# pnpm (推荐)
+cd vue3-music
 pnpm install
-
-# npm
-npm install
-
-# yarn
-yarn install
-```
-
-3. 运行项目
-
-```bash
-# pnpm (推荐)
 pnpm run dev
-
-# npm
-npm run dev
-
-# yarn
-yarn dev
 ```
 
-4. 查看模板
+## 网易云音乐 API
 
-运行完毕，自动打开 http://127.0.0.1:8088/
+需运行 API 服务，才能正常访问
 
-5. 其他
+[开发文档](https://binaryify.github.io/NeteaseCloudMusicApi)
 
-其他配置，请自行修改/添加
+## 功能模块
+
+- [ ] 手机号登录
+- [x] 二维码登录
+- [x] 主题切换
+
+推荐
+
+- [x] 专属歌单
+- [x] 推荐新音乐
+- [x] 推荐 MV
+
+音乐馆
+
+- [x] 精选
+- [x] 歌单
+- [x] 排行榜
+- [x] 歌手
+- [x] 新歌速递
