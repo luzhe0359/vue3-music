@@ -15,7 +15,8 @@ export const useUserStore = defineStore({
   },
   actions: {
     async checkLogin() {
-      const { code, profile } = await useLoginStatus()
+      const cookie = localStorage.getItem('USER-COOKIE') ?? ''
+      const { code, profile } = await useLoginStatus(cookie)
       if (code === 200) {
         this.profile = profile
         this.showLogin = false

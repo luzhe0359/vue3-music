@@ -25,13 +25,13 @@ export async function useLogin(phone: string, password: string) {
   }>('login/cellphone', { phone: phone, password: password })
 }
 
-export async function useLoginStatus() {
+export async function useLoginStatus(cookie: string) {
   const { data } = await http.get<{
     data: {
       code: number
       profile: UserProfile
     }
-  }>('login/status')
+  }>('login/status', { cookie })
 
   return data
 }

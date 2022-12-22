@@ -40,6 +40,7 @@ const checkStatus = () => {
         type: 'success'
       })
       document.cookie = cookie
+      localStorage.setItem('USER-COOKIE', cookie)
       // 这一步会返回cookie
       clearInterval(timer.value)
       checkLogin()
