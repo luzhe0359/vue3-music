@@ -33,8 +33,14 @@ const emit = defineEmits<{
         <div class="ml-5">播放：{{ useNumberFormat(playlist.playCount) }}</div>
       </div>
       <div class="justify-self-stretch mt-2 gap-x-6">
-        <el-button type="primary" round> <IconPark :icon="PlayOne" :size="22" theme="filled" @click="emit('playAll')" />播放全部 </el-button>
-        <el-button round> <IconPark class="mr-1" :icon="Like" :size="18" />收藏 </el-button>
+        <el-button type="primary" round @click="emit('playAll')">
+          <IconPark :icon="PlayOne" :size="22" theme="filled" />
+          <span>播放全部</span>
+        </el-button>
+        <el-button round>
+          <IconPark class="mr-1" :icon="Like" :size="18" />
+          <span>收藏</span>
+        </el-button>
         <el-button class="w-8" round> <IconPark :icon="More" /> </el-button>
       </div>
     </div>

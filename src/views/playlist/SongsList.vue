@@ -3,6 +3,7 @@ import { storeToRefs } from 'pinia'
 import { usePlayerStore } from '@/stores/player'
 import { useFormatDuring } from '@/utils/number'
 import type { Song } from '@/models/song'
+import Playing from '@/components/common/Playing.vue'
 
 const { play } = usePlayerStore()
 const { id } = storeToRefs(usePlayerStore())
@@ -15,14 +16,18 @@ const tableRowClassName = ({ row, rowIndex }: { row: Song; rowIndex: number }) =
   return row.id == id.value ? 'table-playing' : ''
 }
 
-const dblclick = (row: Song, column: any, cell: any, event: Event) => {
+const dblclick = (row: Song) => {
   play(row.id)
 }
 </script>
 
 <template>
   <el-table :data="songs" style="width: 100%" :row-class-name="tableRowClassName" @cell-dblclick="dblclick">
-    <el-table-column type="index" width="50" />
+    <el-table-column label="" width="50">
+      <template #default="scope">
+        <Playing :index="scope.$index" :playing-id="scope.row.id" />
+      </template>
+    </el-table-column>
     <el-table-column label="标题" min-width="150">
       <template #default="scope">
         <span>{{ scope.row.name }}</span>

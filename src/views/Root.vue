@@ -2,6 +2,7 @@
 import Menu from '@/components/layout/menu/Menu.vue'
 import Header from '@/components/layout/header/Header.vue'
 import Footer from '@/components/layout/footer/Footer.vue'
+import PlayedList from '@/components/layout/playedList/PlayedList.vue'
 </script>
 
 <template>
@@ -25,6 +26,8 @@ import Footer from '@/components/layout/footer/Footer.vue'
       </div>
     </div>
   </div>
+
+  <PlayedList />
 </template>
 <style lang="scss" scoped>
 .divider-shadow {
