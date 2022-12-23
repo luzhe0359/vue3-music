@@ -101,12 +101,12 @@ const routes: Array<RouteRecordRaw> = [
         path: 'playlist',
         name: 'playlist',
         component: () => import('@/views/playlist/PlayList.vue')
+      },
+      {
+        path: 'artistDetail',
+        name: 'artistDetail',
+        component: () => import('@/views/artist/ArtistDetail.vue')
       }
-      // {
-      //   path: 'artistDetail',
-      //   name: 'artistDetail',
-      //   component: () => import('@/views/artist/ArtistDetail.vue')
-      // },
       // {
       //   path: 'album',
       //   name: 'album',

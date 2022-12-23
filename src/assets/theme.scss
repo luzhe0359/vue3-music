@@ -40,6 +40,11 @@
   @apply dark:text-slate-400;
 }
 
+.text-desc {
+  @apply text-slate-500;
+  @apply dark:text-gray-400;
+}
+
 .button {
   @apply flex bg-emerald-600 rounded-full justify-center items-center h-8 text-sm transition-all;
   @apply text-white;

@@ -42,6 +42,7 @@ declare module '@vue/runtime-core' {
     RouterView: typeof import('vue-router')['RouterView']
     SearchPop: typeof import('./src/components/layout/header/SearchPop.vue')['default']
     SearchSuggest: typeof import('./src/components/layout/header/SearchSuggest.vue')['default']
+    SongList: typeof import('./src/components/common/SongList.vue')['default']
     Title: typeof import('./src/components/common/Title.vue')['default']
     UserInfo: typeof import('./src/components/layout/header/UserInfo.vue')['default']
   }

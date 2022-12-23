@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { PlayOne, Play, Headset } from '@icon-park/vue-next'
 import IconPark from '@/components/common/IconPark.vue'
-import { useNumberFormat } from '@/utils/number'
+import { useNumberFormat, useFormatDuring } from '@/utils/number'
 
 defineProps<{
   picUrl: string
@@ -10,6 +10,7 @@ defineProps<{
   showPlayCount?: boolean
   onPlay?: () => void
   video?: boolean
+  duration?: number | 0
 }>()
 </script>
 
@@ -25,6 +26,9 @@ defineProps<{
         @click="onPlay"
       />
     </div>
+    <div v-if="video && duration" class="play-count">
+      <text>{{ useFormatDuring(duration / 1000 || 0) }} </text>
+    </div>
     <div v-if="showPlayCount" class="play-count">
       <IconPark :icon="video ? Play : Headset" class="mr-1" :size="12" />
       <text>{{ useNumberFormat(playCount || 0) }} </text>
@@ -36,6 +40,11 @@ defineProps<{
 .cover-play-image {
   @apply rounded-lg cursor-pointer transition-all relative overflow-hidden;
   @apply hover:-translate-y-1;
+
+  &.aspect-video {
+    @apply rounded;
+  }
+
   .mask {
     @apply absolute inset-0 bg-black bg-opacity-0 transition-all duration-500;
   }

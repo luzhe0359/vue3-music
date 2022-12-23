@@ -82,7 +82,7 @@ body {
 }
 
 .el-tabs__header {
-  @apply m-0;
+  margin: 0 !important;
 }
 
 /* el-divider样式无效bug */
@@ -100,5 +100,11 @@ body {
   // 播放中+背景
   .table-playing {
     @apply bg-emerald-50 dark:bg-[#222];
+  }
+}
+
+.el-tabs {
+  .el-tabs__header {
+    @apply sticky top-0 z-10 bg-white dark:bg-[#171717];
   }
 }

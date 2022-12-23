@@ -19,13 +19,4 @@ const { menus, currentMenu, handleTabClick } = useMusicMenu()
   </div>
 </template>
 
-<style lang="scss">
-.music {
-  .el-tabs__nav-wrap::after {
-    height: 0;
-  }
-  .el-tabs__header {
-    @apply m-0;
-  }
-}
-</style>
+<style lang="scss"></style>

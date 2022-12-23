@@ -115,7 +115,7 @@ export async function useArtistDesc(id: number) {
 }
 
 export async function useArtistSongs(id: number, order = 'time', limit = 10, offset = 0) {
-  return await http.get<{ songs: Song[] }>('artist/songs', {
+  return await http.get<{ songs: Song[]; more: boolean }>('artist/songs', {
     id: id,
     order: order,
     limit: limit,
@@ -124,7 +124,7 @@ export async function useArtistSongs(id: number, order = 'time', limit = 10, off
 }
 
 export async function useArtistAlbum(id: number, limit = 10, offset = 0) {
-  return await http.get<{ hotAlbums: Album[] }>('artist/album', {
+  return await http.get<{ hotAlbums: Album[]; more: boolean }>('artist/album', {
     id: id,
     limit: limit,
     offset: offset
@@ -132,7 +132,7 @@ export async function useArtistAlbum(id: number, limit = 10, offset = 0) {
 }
 
 export async function useArtistMv(id: number, limit = 10, offset = 0) {
-  return await http.get<{ mvs: Mv[] }>('artist/mv', {
+  return await http.get<{ mvs: Mv[]; hasMore: boolean }>('artist/mv', {
     id: id,
     limit: limit,
     offset: offset

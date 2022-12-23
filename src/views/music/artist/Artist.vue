@@ -1,10 +1,22 @@
 <script setup lang="ts">
 import { h, ref, reactive, computed, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 import { ElDivider } from 'element-plus'
 import { userArtistList } from '@/utils/api'
 import { Artist } from '@/models/artist'
 
+const router = useRouter()
 const spacer = h(ElDivider, { direction: 'vertical' })
+const list = ref<Artist[]>([])
+const pageData = reactive({
+  init: false,
+  loading: false,
+  page: 1,
+  limit: 60,
+  initial: '-1',
+  type: -1,
+  area: -1
+})
 
 const options: {
   name: string
@@ -68,17 +80,6 @@ const options: {
     ]
   }
 ]
-
-const list = ref<Artist[]>([])
-const pageData = reactive({
-  init: false,
-  loading: false,
-  page: 1,
-  limit: 60,
-  initial: '-1',
-  type: -1,
-  area: -1
-})
 
 const isActive = computed(() => (optionName: string, valueName: string | number) => {
   return (
@@ -146,7 +147,12 @@ onMounted(getData)
     </div>
   </div>
   <div class="grid grid-flow-row grid-cols-6 xl:grid-cols- 2xl:grid-cols-10 gap-5">
-    <div v-for="item in list" :key="item.id" class="flex flex-col items-center">
+    <div
+      v-for="item in list"
+      :key="item.id"
+      class="flex flex-col items-center"
+      @click="router.push({ name: 'artistDetail', query: { id: item.id } })"
+    >
       <!-- <el-avatar class="w-full" :src="item.img1v1Url + '?param=120y120'" /> -->
       <img :src="item.img1v1Url + '?param=120y120'" alt="" class="rounded-full cursor-pointer w-full aspect-square object-cover" />
       <div class="mt-2 text-sm">{{ item.name }}</div>

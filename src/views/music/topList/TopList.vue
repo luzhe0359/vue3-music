@@ -15,7 +15,7 @@ onMounted(async () => {
 })
 
 const toPlaylist = (topListDetail: TopListDetail) => {
-  // router.push({ name: 'playlist', query: { id: topListDetail.id } })
+  router.push({ name: 'playlist', query: { id: topListDetail.id } })
 }
 </script>
 
