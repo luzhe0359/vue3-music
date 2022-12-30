@@ -50,7 +50,7 @@ export async function useDetail(id: number) {
 
 export async function useBanner() {
   const { banners } = await http.get<{ banners: Banner[] }>('banner', {
-    type: 1
+    type: 0
   })
   return banners
 }

@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { ref, reactive, computed, onMounted } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import type { Album } from '@/models/album'
 import CoverPlay from '@/components/common/CoverPlay.vue'
 import { useArtistAlbum } from '@/utils/api'
 
+const router = useRouter()
 const route = useRoute()
 const id = Number(route.query.id)
 
@@ -47,7 +48,7 @@ onMounted(getData)
 </script>
 <template>
   <div class="mt-5 grid grid-flow-row grid-cols-3 lg:grid-cols-5 2xl:grid-cols-8 gap-5">
-    <div v-for="item in list" :key="item.id">
+    <div v-for="item in list" :key="item.id" @click="router.push({ name: 'album', query: { id: item.id } })">
       <CoverPlay :name="item.name" :pic-url="item.picUrl" />
       <div class="mt-2 text-xs truncate">{{ item.name }}</div>
       <div class="mt-2 text-xs text-slate-400 truncate">{{ item.publishTime.toDate() }}</div>

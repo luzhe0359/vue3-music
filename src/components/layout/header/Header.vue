@@ -47,7 +47,7 @@ onMounted(() => {
     <div class="flex items-center mr-5">
       <UserInfo />
       <IconPark :icon="Mail" :stroke-width="2" class="icon-button" />
-      <IconPark :icon="Platte" :stroke-width="2" class="icon-button" @click="changeThemeMode" />
+      <IconPark :icon="Platte" :stroke-width="2" class="icon-button select-none" @click="changeThemeMode" />
       <IconPark :icon="HamburgerButton" :stroke-width="2" class="icon-button" />
     </div>
   </div>

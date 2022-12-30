@@ -106,13 +106,12 @@ const routes: Array<RouteRecordRaw> = [
         path: 'artistDetail',
         name: 'artistDetail',
         component: () => import('@/views/artist/ArtistDetail.vue')
+      },
+      {
+        path: 'album',
+        name: 'album',
+        component: () => import('@/views/album/Album.vue')
       }
-      // {
-      //   path: 'album',
-      //   name: 'album',
-      //   component: () => import('@/views/album/Album.vue')
-      // },
-
       // {
       //   path: 'mvDetail',
       //   name: 'mvDetail',

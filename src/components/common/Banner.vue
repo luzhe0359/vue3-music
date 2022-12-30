@@ -2,13 +2,16 @@
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
 import { onMounted, toRefs } from 'vue'
+import { useRouter } from 'vue-router'
 import { usePlayerStore } from '@/stores/player'
 import { useCommonStore } from '@/stores/common'
 import type { Banner } from '@/models/banner'
 
+const router = useRouter()
 const { banners } = toRefs(useCommonStore())
 const { getBanners } = useCommonStore()
 const { play } = usePlayerStore()
+
 onMounted(async () => {
   await getBanners()
 })
@@ -16,6 +19,8 @@ onMounted(async () => {
 const onClick = (banner: Banner) => {
   if (banner.targetType === 1) {
     play(banner.targetId)
+  } else if (banner.targetType === 10) {
+    router.push({ name: 'album', query: { id: banner.targetId } })
   }
 }
 </script>
@@ -23,7 +28,7 @@ const onClick = (banner: Banner) => {
 <template>
   <Swiper slides-per-group-auto slides-per-view="auto" :navigation="true" :grab-cursor="true">
     <SwiperSlide v-for="item in banners" :key="item.bannerId">
-      <img :src="item.pic" class="banner-image" @click="onClick(item)" />
+      <img :src="item.imageUrl" class="banner-image" @click="onClick(item)" />
     </SwiperSlide>
   </Swiper>
 </template>

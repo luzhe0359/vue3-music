@@ -154,7 +154,7 @@ onMounted(getData)
       @click="router.push({ name: 'artistDetail', query: { id: item.id } })"
     >
       <!-- <el-avatar class="w-full" :src="item.img1v1Url + '?param=120y120'" /> -->
-      <img :src="item.img1v1Url + '?param=120y120'" alt="" class="rounded-full cursor-pointer w-full aspect-square object-cover" />
+      <img :src="item.picUrl + '?param=120y120'" alt="" class="rounded-full cursor-pointer w-full aspect-square object-cover" />
       <div class="mt-2 text-sm">{{ item.name }}</div>
     </div>
   </div>

@@ -4,4 +4,5 @@ export interface Banner {
   targetType: number
   typeTitle: string
   bannerId: number
+  imageUrl: string
 }
