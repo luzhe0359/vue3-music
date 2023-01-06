@@ -12,3 +12,38 @@ export interface MvUrl {
   promotionVo?: any
   msg: string
 }
+
+export interface Mv {
+  id: number
+  cover: string
+  name: string
+  playCount: number
+  briefDesc?: any
+  desc?: any
+  artistName: string
+  artistId: number
+  duration: number
+  mark: number
+  subed: boolean
+  artists: MvArtists[]
+}
+
+export interface NewMv {
+  id: number
+  cover: string
+  name: string
+  playCount: number
+  briefDesc?: any
+  desc?: any
+  artistName: string
+  artistId: number
+  duration: number
+  mark: number
+  subed: boolean
+  artists: MvArtists[]
+}
+
+export interface MvArtists {
+  id: number
+  name: string
+}

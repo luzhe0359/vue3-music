@@ -28,9 +28,11 @@ declare module '@vue/runtime-core' {
     Footer: typeof import('./src/components/layout/footer/Footer.vue')['default']
     Header: typeof import('./src/components/layout/header/Header.vue')['default']
     IconPark: typeof import('./src/components/common/IconPark.vue')['default']
+    Loading: typeof import('./src/components/common/Loading.vue')['default']
     Menu: typeof import('./src/components/layout/menu/Menu.vue')['default']
     MenuList: typeof import('./src/components/layout/menu/MenuList.vue')['default']
     MoreText: typeof import('./src/components/common/MoreText.vue')['default']
+    MvList: typeof import('./src/components/common/MvList.vue')['default']
     PlayedList: typeof import('./src/components/layout/playedList/PlayedList.vue')['default']
     PlayerAction: typeof import('./src/components/layout/footer/PlayerAction.vue')['default']
     PlayerController: typeof import('./src/components/layout/footer/PlayerController.vue')['default']
@@ -47,6 +49,7 @@ declare module '@vue/runtime-core' {
     UserInfo: typeof import('./src/components/layout/header/UserInfo.vue')['default']
   }
   export interface ComponentCustomProperties {
+    vInfiniteScroll: typeof import('element-plus/es')['ElInfiniteScroll']
     vLoading: typeof import('element-plus/es')['ElLoadingDirective']
   }
 }

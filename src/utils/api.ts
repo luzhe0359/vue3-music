@@ -1,3 +1,4 @@
+import { Mv } from './../models/mv'
 import http from '@/utils/http'
 
 import type { Banner } from '@/models/banner'
@@ -12,7 +13,7 @@ import type { ArtistDesc, ArtistDetail } from '@/models/artist_detail'
 import type { Album } from '@/models/album'
 import type { PersonalizedPrivateContent, Video, VideoGroup } from '@/models/video'
 import type { SearchHotDetail, SearchSuggest } from '@/models/search'
-import type { MvUrl } from '@/models/mv'
+import type { MvUrl, NewMv, Mv } from '@/models/mv'
 import type { PlayListHot } from '@/models/playlist_hot'
 import type { UserProfile } from '@/models/user'
 import type { TopSong } from '@/models/top_song'
@@ -168,11 +169,11 @@ export async function useVideoGroupList() {
 }
 
 export async function useVideoGroup(id?: number, offset?: number) {
-  const { datas } = await http.get<{ datas: Video[] }>(id ? 'video/group' : 'video/timeline/all', {
+  const { datas, hasmore } = await http.get<{ datas: Video[]; hasmore: boolean }>(id ? 'video/group' : 'video/timeline/all', {
     id: id,
     offset: offset
   })
-  return datas
+  return { datas, hasmore }
 }
 
 export async function useAlbum(id: number) {
@@ -256,4 +257,31 @@ export async function usecheckStatus(key: string) {
     message: string
   }>('login/qr/check', { key })
   return { code, cookie }
+}
+
+// 全部mv
+export async function useAllMv(area?: string, type?: string, order?: string, limit = 8, offset = 0) {
+  return await http.get<{ data: Mv[]; hasMore: boolean }>('mv/all', {
+    area,
+    type,
+    order,
+    limit,
+    offset
+  })
+}
+
+// 最新mv
+export async function useNewMv(area: string, limit = 10) {
+  return await http.get<{ data: NewMv[] }>('mv/first', {
+    area,
+    limit
+  })
+}
+
+// 网易出品mv
+export async function useExclusiveMv(limit = 10, offset = 0) {
+  return await http.get<{ data: Mv[] }>('mv/exclusive/rcmd', {
+    offset,
+    limit
+  })
 }

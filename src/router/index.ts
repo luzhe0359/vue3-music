@@ -80,12 +80,35 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: 'video',
         name: 'video',
-        component: () => import('@/views/video/Video.vue'),
+        component: () => import('@/views/video/Index.vue'),
+        redirect: { name: 'videoList' },
         meta: {
           menu: 'video',
           title: '视频',
           keepAlive: true
-        }
+        },
+        children: [
+          {
+            path: 'list',
+            name: 'videoList',
+            component: () => import('@/views/video/videoList/Index.vue'),
+            meta: {
+              menu: 'video',
+              title: '视频',
+              keepAlive: true
+            }
+          },
+          {
+            path: 'mv',
+            name: 'videoMv',
+            component: () => import('@/views/video/videoMv/Index.vue'),
+            meta: {
+              menu: 'video',
+              title: 'mv',
+              keepAlive: true
+            }
+          }
+        ]
       },
       {
         path: 'dj',
