@@ -3,7 +3,7 @@ import { storeToRefs } from 'pinia'
 import { usePlayerStore } from '@/stores/player'
 import { useFormatDuring } from '@/utils/number'
 import type { Song } from '@/models/song'
-import Playing from '@/components/common/Playing.vue'
+import Playing from '@/components/Playing.vue'
 
 const { play } = usePlayerStore()
 const { id } = storeToRefs(usePlayerStore())

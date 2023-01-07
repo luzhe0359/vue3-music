@@ -2,7 +2,7 @@
 import { ref, reactive, computed, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import type { Mv } from '@/models/artist'
-import CoverPlay from '@/components/common/CoverPlay.vue'
+import CoverPlay from '@/components/CoverPlay.vue'
 import { useArtistMv } from '@/utils/api'
 
 const route = useRoute()

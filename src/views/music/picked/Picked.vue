@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Banner from '@/components/common/Banner.vue'
+import Banner from '@/components/Banner.vue'
 import DjProgram from '@/views/discover/DjProgram.vue'
 import Video from './Video.vue'
 import Mv from '@/views/discover/Mv.vue'

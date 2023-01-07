@@ -4,7 +4,7 @@ import { useRoute } from 'vue-router'
 import { PlayOne, More } from '@icon-park/vue-next'
 import { usePlayerStore } from '@/stores/player'
 import type { Song } from '@/models/song'
-import SongList from '@/components/common/SongList.vue'
+import SongList from '@/components/SongList.vue'
 import { useArtistSongs } from '@/utils/api'
 
 const route = useRoute()
@@ -77,7 +77,7 @@ onMounted(getData)
     </div>
   </div>
   <SongList :songs="list" />
-  <el-button v-if="list.length && pageData.noMore" class="mt-4 w-full text-full" text type="primary" :loading="pageData.loading" @click="loadMore"
-    >加载更多</el-button
-  >
+  <el-button v-if="list.length && pageData.noMore" class="mt-4 w-full text-full" text type="primary" :loading="pageData.loading" @click="loadMore">
+    加载更多
+  </el-button>
 </template>

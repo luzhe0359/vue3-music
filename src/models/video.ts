@@ -164,6 +164,7 @@ export interface VideoData {
   praisedCount: number
   praised: boolean
   subscribed: boolean
+  liveData?: any
 }
 
 export interface PersonalizedPrivateContent {

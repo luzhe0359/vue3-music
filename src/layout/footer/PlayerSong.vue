@@ -2,7 +2,7 @@
 import { Like, DownTwo, MoreTwo, Comment } from '@icon-park/vue-next'
 import { usePlayerStore } from '@/stores/player'
 import { OpticalDisk } from '@/assets/img'
-import IconPark from '@/components/common/IconPark.vue'
+import IconPark from '@/components/IconPark.vue'
 import { toRefs } from 'vue'
 
 const { song, songUrl } = toRefs(usePlayerStore())

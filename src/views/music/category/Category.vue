@@ -2,7 +2,7 @@
 import { onMounted, ref, reactive } from 'vue'
 import { useRouter } from 'vue-router'
 import PlaylistHot from './PlaylistHot.vue'
-import CoverPlay from '@/components/common/CoverPlay.vue'
+import CoverPlay from '@/components/CoverPlay.vue'
 import type { PlayListDetail } from '@/models/playlist'
 import { useTopPlaylistHighquality } from '@/utils/api'
 

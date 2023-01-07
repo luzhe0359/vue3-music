@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { PlayOne, Play, Headset } from '@icon-park/vue-next'
-import IconPark from '@/components/common/IconPark.vue'
+import IconPark from '@/components/IconPark.vue'
 import { useNumberFormat, useFormatDuring } from '@/utils/number'
 
 defineProps<{

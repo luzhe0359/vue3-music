@@ -2,7 +2,7 @@
 import { onMounted, toRefs } from 'vue'
 import { useRouter } from 'vue-router'
 import { useMusicStore } from '@/stores/music'
-import CoverPlay from '@/components/common/CoverPlay.vue'
+import CoverPlay from '@/components/CoverPlay.vue'
 import type { TopListDetail } from '@/models/toplist_detail'
 
 const { topListDetailData } = toRefs(useMusicStore())

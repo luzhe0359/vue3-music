@@ -4,7 +4,7 @@ import { useRoute } from 'vue-router'
 import { useArtistDesc } from '@/utils/api'
 import type { ArtistDesc } from '@/models/artist_detail'
 
-import CoverPlay from '@/components/common/CoverPlay.vue'
+import CoverPlay from '@/components/CoverPlay.vue'
 
 const route = useRoute()
 const id = Number(route.query.id)

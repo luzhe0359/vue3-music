@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { PlayOne, Like, More } from '@icon-park/vue-next'
 import type { PlayListDetail } from '@/models/playlist'
-import MoreText from '@/components/common/MoreText.vue'
+import MoreText from '@/components/MoreText.vue'
 import { useNumberFormat } from '@/utils/number'
 
 defineProps<{

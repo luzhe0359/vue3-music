@@ -2,9 +2,9 @@
 import { ref, onMounted } from 'vue'
 import { HamburgerButton, Left, Mail, Platte, Right, Search } from '@icon-park/vue-next'
 import { useRouter } from 'vue-router'
-import IconPark from '@/components/common/IconPark.vue'
-import UserInfo from '@/components/layout/header/UserInfo.vue'
-import SearchPop from '@/components/layout/header/SearchPop.vue'
+import IconPark from '@/components/IconPark.vue'
+import UserInfo from './UserInfo.vue'
+import SearchPop from './SearchPop.vue'
 
 const iconSize = 22
 

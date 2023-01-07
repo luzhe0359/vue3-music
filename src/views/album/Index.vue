@@ -6,7 +6,7 @@ import type { Album } from '@/models/album'
 import type { Song } from '@/models/song'
 import { useAlbum } from '@/utils/api'
 import Info from './Info.vue'
-import SongList from '@/components/common/SongList.vue'
+import SongList from '@/components/SongList.vue'
 import Desc from './Desc.vue'
 
 const { pushPlayList, play } = usePlayerStore()

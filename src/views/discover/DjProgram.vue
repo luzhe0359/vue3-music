@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, toRefs } from 'vue'
 import { useVideoStore } from '@/stores/video'
-import CoverPlay from '@/components/common/CoverPlay.vue'
+import CoverPlay from '@/components/CoverPlay.vue'
 import { useRouter } from 'vue-router'
 import { usePersonalizedStore } from '@/stores/personalized'
 

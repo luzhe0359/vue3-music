@@ -2,7 +2,7 @@
 import { MusicList, TextMessage } from '@icon-park/vue-next'
 import { useFormatDuring } from '@/utils/number'
 import { usePlayerStore } from '@/stores/player'
-import IconPark from '@/components/common/IconPark.vue'
+import IconPark from '@/components/IconPark.vue'
 import { storeToRefs } from 'pinia'
 
 const { currentTime, duration, playListCount, showPlayList } = storeToRefs(usePlayerStore())

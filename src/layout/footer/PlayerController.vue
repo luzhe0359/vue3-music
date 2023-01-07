@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { Play, PauseOne, LoopOnce, ShuffleOne, PlayOnce, GoEnd, GoStart, VolumeSmall } from '@icon-park/vue-next'
 import { toRefs } from 'vue'
-import IconPark from '@/components/common/IconPark.vue'
-import PlayerVolumeSlider from '@/components/layout/footer/PlayerVolumeSlider.vue'
+import IconPark from '@/components/IconPark.vue'
+import PlayerVolumeSlider from './PlayerVolumeSlider.vue'
 import { usePlayerStore } from '@/stores/player'
 
 const { toggleLoop, loopType, next, prev, togglePlay, isPause } = toRefs(usePlayerStore())

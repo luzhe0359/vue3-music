@@ -4,13 +4,14 @@
   </div>
 </template>
 
-<style lang="scss">
-$colors: hsla(337, 84, 48, 0.75) hsla(160, 50, 48, 0.75) hsla(190, 61, 65, 0.75) hsla(41, 82, 52, 0.75);
+<style lang="scss" scoped>
+@use 'sass:math';
+$colors: rgba(225, 20, 98, 0.75) rgba(61, 184, 143, 0.75) rgba(111, 202, 220, 0.75) rgba(233, 169, 32, 0.75);
 $size: 2.5em;
 $thickness: 0.5em;
 
 // Calculated variables.
-$lat: ($size - $thickness) / 2;
+$lat: math.div($size - $thickness, 2);
 $offset: $lat - $thickness;
 
 .loader {
@@ -28,7 +29,7 @@ $offset: $lat - $thickness;
     display: block;
     width: $thickness;
     height: $thickness;
-    border-radius: $thickness / 2;
+    border-radius: math.div($thickness, 2);
     transform: translate(-50%, -50%);
   }
 

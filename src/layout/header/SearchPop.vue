@@ -6,7 +6,7 @@ import { debounce } from 'lodash'
 import { useSearchStore } from '@/stores/search'
 import type { SearchHotDetail } from '@/models/search'
 import { useSearchHotDetail } from '@/utils/api'
-import SearchSuggest from '@/components/layout/header/SearchSuggest.vue'
+import SearchSuggest from './SearchSuggest.vue'
 
 const { showSearchView, searchKeyword, showHot } = storeToRefs(useSearchStore())
 const { suggest } = useSearchStore()

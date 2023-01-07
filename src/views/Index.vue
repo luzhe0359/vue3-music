@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import Menu from '@/components/layout/menu/Menu.vue'
-import Header from '@/components/layout/header/Header.vue'
-import Footer from '@/components/layout/footer/Footer.vue'
-import PlayedList from '@/components/layout/playedList/PlayedList.vue'
+import Menu from '@/layout/menu/Menu.vue'
+import Header from '@/layout/header/Header.vue'
+import Footer from '@/layout/footer/Footer.vue'
+import PlayedList from '@/components/PlayedList.vue'
 </script>
 
 <template>

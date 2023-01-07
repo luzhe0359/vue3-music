@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 import { onMounted, toRefs } from 'vue'
-import Title from '@/components/common/Title.vue'
-import CoverPlay from '@/components/common/CoverPlay.vue'
+import Title from '@/components/Title.vue'
+import CoverPlay from '@/components/CoverPlay.vue'
 import { useMusicStore } from '@/stores/music'
 
 const router = useRouter()

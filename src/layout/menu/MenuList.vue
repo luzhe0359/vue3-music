@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { userMenu } from '@/components/layout/menu/useMenu'
-import IconPark from '@/components/common/IconPark.vue'
+import { userMenu } from './useMenu'
+import IconPark from '@/components/IconPark.vue'
 
 const { menus, currentKey, click } = userMenu()
 </script>

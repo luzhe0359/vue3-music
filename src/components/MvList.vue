@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import CoverPlay from '@/components/common/CoverPlay.vue'
+import CoverPlay from '@/components/CoverPlay.vue'
 import { useRouter } from 'vue-router'
 import type { NewMv } from '@/models/mv'
 

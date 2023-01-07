@@ -2,7 +2,7 @@
 import { VolumeMute, VolumeSmall } from '@icon-park/vue-next'
 import { toRefs } from 'vue'
 import { usePlayerStore } from '@/stores/player'
-import IconPark from '@/components/common/IconPark.vue'
+import IconPark from '@/components/IconPark.vue'
 
 const { volume, muted, toggleMuted, setVolume } = toRefs(usePlayerStore())
 </script>

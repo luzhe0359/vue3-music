@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, toRefs } from 'vue'
-import Title from '@/components/common/Title.vue'
+import Title from '@/components/Title.vue'
 import { usePlayerStore } from '@/stores/player'
 import { useMusicStore } from '@/stores/music'
 

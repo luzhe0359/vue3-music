@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Right } from '@icon-park/vue-next'
-import IconPark from '@/components/common/IconPark.vue'
+import IconPark from '@/components/IconPark.vue'
 
 defineProps<{
   title: string

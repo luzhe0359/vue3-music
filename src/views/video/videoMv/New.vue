@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref, toRefs } from 'vue'
-import MvList from '@/components/common/MvList.vue'
+import MvList from '@/components/MvList.vue'
 import { useNewMv } from '@/utils/api'
 import type { NewMv } from '@/models/mv'
 

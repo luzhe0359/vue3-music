@@ -4,13 +4,13 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Home',
-    component: () => import('@/views/Root.vue'),
+    component: () => import('@/views/Index.vue'),
     redirect: { name: 'discover' },
     children: [
       {
         path: 'discover',
         name: 'discover',
-        component: () => import('@/views/discover/Discover.vue'),
+        component: () => import('@/views/discover/Index.vue'),
         meta: {
           menu: 'discover',
           keepAlive: true
@@ -19,7 +19,7 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: 'music',
         name: 'music',
-        component: () => import('@/views/music/Music.vue'),
+        component: () => import('@/views/music/Index.vue'),
         redirect: { name: 'picked' },
         meta: {
           menu: 'music'
@@ -133,7 +133,7 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: 'album',
         name: 'album',
-        component: () => import('@/views/album/Album.vue')
+        component: () => import('@/views/album/Index.vue')
       }
       // {
       //   path: 'mvDetail',

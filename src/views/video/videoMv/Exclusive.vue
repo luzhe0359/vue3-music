@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import MvList from '@/components/common/MvList.vue'
+import MvList from '@/components/MvList.vue'
 import { useExclusiveMv } from '@/utils/api'
 import type { Mv } from '@/models/mv'
 
