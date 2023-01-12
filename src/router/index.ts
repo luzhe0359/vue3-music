@@ -123,7 +123,7 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: 'playlist',
         name: 'playlist',
-        component: () => import('@/views/playlist/PlayList.vue')
+        component: () => import('@/views/playlist/Index.vue')
       },
       {
         path: 'artistDetail',
@@ -134,12 +134,12 @@ const routes: Array<RouteRecordRaw> = [
         path: 'album',
         name: 'album',
         component: () => import('@/views/album/Index.vue')
+      },
+      {
+        path: 'mvDetail',
+        name: 'mvDetail',
+        component: () => import('@/views/mv/MvDetail.vue')
       }
-      // {
-      //   path: 'mvDetail',
-      //   name: 'mvDetail',
-      //   component: () => import('@/views/mv/mvDetail.vue')
-      // }
     ]
   }
 ]

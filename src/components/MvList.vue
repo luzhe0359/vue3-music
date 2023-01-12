@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import CoverPlay from '@/components/CoverPlay.vue'
 import { useRouter } from 'vue-router'
-import type { NewMv } from '@/models/mv'
+import type { Mv } from '@/models/mv'
 
-defineProps<{ mvList: NewMv[] }>()
+defineProps<{ mvList: Mv[] }>()
 
 const router = useRouter()
 </script>

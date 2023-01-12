@@ -2,11 +2,11 @@
 import { onMounted, ref, toRefs } from 'vue'
 import MvList from '@/components/MvList.vue'
 import { useNewMv } from '@/utils/api'
-import type { NewMv } from '@/models/mv'
+import type { Mv } from '@/models/mv'
 
 const currentArea = ref('')
 const areas: string[] = ['内地', '港台', '欧美', '日本', '韩国']
-const newMvList = ref<NewMv[]>([])
+const newMvList = ref<Mv[]>([])
 
 const changeArea = (area: string) => {
   currentArea.value = area

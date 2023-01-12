@@ -1,4 +1,3 @@
-import { Mv } from './../models/mv'
 import http from '@/utils/http'
 
 import type { Banner } from '@/models/banner'
@@ -8,12 +7,12 @@ import type { PlayListCat } from '@/models/playlist_cat'
 import type { Song } from '@/models/song'
 import type { SongUrl } from '@/models/song_url'
 import type { TopListDetail } from '@/models/toplist_detail'
-import type { Artist, Mv } from '@/models/artist'
+import type { Artist } from '@/models/artist'
 import type { ArtistDesc, ArtistDetail } from '@/models/artist_detail'
 import type { Album } from '@/models/album'
 import type { PersonalizedPrivateContent, Video, VideoGroup } from '@/models/video'
 import type { SearchHotDetail, SearchSuggest } from '@/models/search'
-import type { MvUrl, NewMv, Mv } from '@/models/mv'
+import type { MvUrl, Mv, MvDetail } from '@/models/mv'
 import type { PlayListHot } from '@/models/playlist_hot'
 import type { UserProfile } from '@/models/user'
 import type { TopSong } from '@/models/top_song'
@@ -192,10 +191,6 @@ export async function useSearchSuggest(keywords: string) {
   return result
 }
 
-export async function useMvDetail(mvid: number) {
-  console.log('useMvDetail')
-}
-
 export async function useMvUrl(id: number) {
   const { data } = await http.get<{ data: MvUrl }>('mv/url', { id: id })
   return data
@@ -272,7 +267,7 @@ export async function useAllMv(area?: string, type?: string, order?: string, lim
 
 // 最新mv
 export async function useNewMv(area: string, limit = 10) {
-  return await http.get<{ data: NewMv[] }>('mv/first', {
+  return await http.get<{ data: Mv[] }>('mv/first', {
     area,
     limit
   })
@@ -284,4 +279,10 @@ export async function useExclusiveMv(limit = 10, offset = 0) {
     offset,
     limit
   })
+}
+
+// mv详情
+export async function useMvDetail(mvid: number) {
+  const { data } = await http.get<{ data: MvDetail }>('mv/detail', { mvid })
+  return data
 }
