@@ -18,7 +18,7 @@ if (props.text && props.text.length > props.end) {
     <template v-if="show">
       <span v-if="isFold">{{ text.substring(0, end) }}...</span>
       <span v-else>{{ text }}...</span>
-      <span class="ml-2 text-gray-700 hover-text" @click="isFold = !isFold">[{{ isFold ? '详情' : '收起' }}]</span>
+      <span class="ml-2 text-gray-700 dark:text-zinc-200 hover-text" @click="isFold = !isFold">[{{ isFold ? '详情' : '收起' }}]</span>
     </template>
     <template v-else> {{ text }}</template>
   </div>

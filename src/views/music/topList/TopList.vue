@@ -25,7 +25,7 @@ const toPlaylist = (topListDetail: TopListDetail) => {
     <div
       v-for="item in topListDetailData.slice(0, 4)"
       :key="item.id"
-      class="flex items-center bg-dc rounded-lg cursor-pointer"
+      class="flex items-center bg-card rounded-lg cursor-pointer"
       @click="toPlaylist(item)"
     >
       <CoverPlay :name="item.name" :pic-url="item.coverImgUrl" show-play-count :play-count="item.playCount" class="w-36 flex-shrink-0" />

@@ -2,7 +2,7 @@
 import MenuList from './MenuList.vue'
 </script>
 <template>
-  <div class="h-screen flex flex-col bg-main">
+  <div class="h-screen flex flex-col">
     <MenuList />
   </div>
 </template>

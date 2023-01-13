@@ -62,7 +62,7 @@ onMounted(getData)
     <div v-for="item in list" :key="item.id" @click="router.push({ name: 'playlist', query: { id: item.id } })">
       <CoverPlay :name="item.name" :pic-url="item.coverImgUrl" show-play-count :play-count="item.playCount" />
       <div class="mt-2 text-xs text-main leading-5">{{ item.name }}</div>
-      <div class="mt-2 text-xs text-main text-dc truncate">{{ item.creator.nickname }}</div>
+      <div class="mt-2 text-xs text-main text-title truncate">{{ item.creator.nickname }}</div>
     </div>
   </div>
   <div class="pt-8">

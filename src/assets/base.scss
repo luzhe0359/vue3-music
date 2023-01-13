@@ -17,23 +17,23 @@
   --el-text-color-primary: text-slate-700 !important;
 }
 
-.dark {
-  &:root {
+:root {
+  &.dark {
     --el-color-primary: #34d399 !important;
     --el-color-primary-light-9: transparent !important; // hover按钮背景色
     --el-border-color-base: #57534e !important;
     --el-text-color-regular: #e2e8f0 !important;
     --el-text-color-primary: text-slate-200 !important;
-    --el-bg-color: #171718 !important;
+    --el-bg-color: #141414 !important;
     --el-color-white: #fff !important;
     --el-border-color-lighter: #474648 !important;
     --el-border-color-light: #474648 !important;
     --el-button-active-bg-color: red;
 
     --el-popover-bg-color: #292524 !important;
-    --el-fill-color-blank: #171718 !important;
+    --el-fill-color-blank: #141414 !important;
     --el-fill-color-light: #222222 !important;
-    --el-bg-color-overlay: #171718 !important;
+    --el-bg-color-overlay: #141414 !important;
     --el-mask-color: #222222 !important;
   }
 }
@@ -48,7 +48,7 @@
     --el-text-color-regular: #e2e8f0 !important;
     --el-text-color-primary: text-slate-200 !important;
     --el-bg-color: #474648 !important;
-    --el-color-white: #171718 !important;
+    --el-color-white: #141414 !important;
     --el-border-color-lighter: #474648 !important;
     --el-border-color-light: #474648 !important;
 
@@ -59,8 +59,8 @@
 html,
 body {
   font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
-  @apply text-slate-700 bg-white;
-  @apply dark:bg-[#171717] dark:text-slate-100;
+  @apply text-slate-700 bg-white transition-all;
+  @apply dark:bg-[#141414] dark:text-slate-100;
 }
 
 .hover-text {
@@ -94,6 +94,7 @@ body {
   vertical-align: middle;
   position: relative;
   border-left: 1px var(--el-border-color) var(--el-border-style);
+  @apply dark:border-stone-800;
 }
 
 .el-table {
@@ -101,10 +102,22 @@ body {
   .table-playing {
     @apply bg-emerald-50 dark:bg-[#222];
   }
+  // 边框
+  td,
+  th {
+    border-bottom: none !important;
+  }
+  .el-table__inner-wrapper::before {
+    height: 0;
+  }
+  // 过渡
+  tr {
+    @apply transition-colors;
+  }
 }
 
 .el-tabs {
   .el-tabs__header {
-    @apply sticky top-0 z-10 bg-white dark:bg-[#171717];
+    @apply sticky top-0 z-10 bg-white dark:bg-[#141414] transition-all;
   }
 }

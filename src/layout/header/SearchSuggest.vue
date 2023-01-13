@@ -36,7 +36,7 @@ const getTitle = (name: string) => {
     <div v-for="order in suggestData.order" :key="order">
       <div class="pt-2 pb-1.5 px-2.5 font-bold">{{ getTitle(order) }}</div>
       <div v-if="order === 'songs'">
-        <div v-for="item in suggestData.songs" :key="item.id" class="py-1.5 px-2.5 hover-bg-main text-xs cursor-pointer" @click="play(item.id)">
+        <div v-for="item in suggestData.songs" :key="item.id" class="py-1.5 px-2.5 hover-bg-card text-xs cursor-pointer" @click="play(item.id)">
           <span class="text-emerald-500">{{ item.name }}</span>
           <span class="pl-1"> - {{ item.artists.first()?.name }}</span>
         </div>
@@ -45,7 +45,7 @@ const getTitle = (name: string) => {
         <div
           v-for="item in suggestData.albums"
           :key="item.id"
-          class="py-1.5 px-2.5 hover-bg-main text-xs cursor-pointer"
+          class="py-1.5 px-2.5 hover-bg-card text-xs cursor-pointer"
           @click="routerPush('album', item.id)"
         >
           <span class="text-emerald-500">{{ item.name }}</span>
@@ -56,7 +56,7 @@ const getTitle = (name: string) => {
         <div
           v-for="item in suggestData.artists"
           :key="item.id"
-          class="py-1.5 px-2.5 hover-bg-main text-xs cursor-pointer flex items-center"
+          class="py-1.5 px-2.5 hover-bg-card text-xs cursor-pointer flex items-center"
           @click="routerPush('artistDetail', item.id)"
         >
           <el-avatar size="small" :src="item.img1v1Url" />
@@ -67,7 +67,7 @@ const getTitle = (name: string) => {
         <div
           v-for="item in suggestData.playlists"
           :key="item.id"
-          class="py-1.5 px-2.5 hover-bg-main text-xs cursor-pointer flex items-center"
+          class="py-1.5 px-2.5 hover-bg-card text-xs cursor-pointer flex items-center"
           @click="routerPush('playlist', item.id)"
         >
           <el-avatar size="small" :src="item.coverImgUrl" />

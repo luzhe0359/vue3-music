@@ -86,7 +86,7 @@ onMounted(() => {
         <div class="qr-main w-52 mx-auto my-0 p-3 box-content transition-all duration-500 transform">
           <div class="relative qr-code w-52 h-52">
             <div v-if="qrInvalid" class="w-full h-full bg-[#000] bg-opacity-80 absolute z-10 flex flex-col justify-center items-center">
-              <div class="mb-2 text-dc">二维码已失效</div>
+              <div class="mb-2 text-title">二维码已失效</div>
               <el-button type="primary" @click="refreshQr">点击刷新</el-button>
             </div>
             <el-image class="w-full h-full" :src="qrimg" fit="cover" />

@@ -20,7 +20,7 @@ const dblclick = (row: Song, column: any, event: any) => {
   <el-drawer v-model="showPlayList" :show-close="false" :with-header="false" direction="rtl" size="50%">
     <div class="text-2xl font-bold">当前播放</div>
     <div class="my-3 flex justify-between">
-      <div class="text-sm text-dc">总{{ playListCount }}首</div>
+      <div class="text-sm text-title">总{{ playListCount }}首</div>
       <el-button type="primary" link @click="clearPlayList">清空列表</el-button>
     </div>
     <el-table class="border-t" :data="playList" :show-header="false" :row-class-name="tableRowClassName" @cell-dblclick="dblclick">

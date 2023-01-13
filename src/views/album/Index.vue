@@ -32,8 +32,8 @@ onMounted(async () => {
   <div v-if="albumDetail" class="artist-detail p-5">
     <Info :album-detail="albumDetail" @play-all="playAll" />
 
-    <div class="bg-view mt-2">
-      <el-tabs v-model="currentTab" class="bg-view">
+    <div class="mt-2">
+      <el-tabs v-model="currentTab">
         <el-tab-pane lazy :label="`歌曲列表 ${songList.length}`" name="music">
           <SongList :songs="songList" />
         </el-tab-pane>

@@ -27,12 +27,12 @@ const emit = defineEmits<{
           <span>歌手：</span>
           <span v-for="(item, index) in albumDetail.artists" :key="item.id">
             <span class="text-active cursor-pointer" @click="router.push({ name: 'artistDetail', query: { id: item.id } })"> {{ item.name }}</span>
-            <span v-if="index !== albumDetail.artists.length - 1" class="text-dc"> / </span>
+            <span v-if="index !== albumDetail.artists.length - 1" class="text-title"> / </span>
           </span>
         </div>
         <div class="text-xs">
           <span>时间：</span>
-          <span class="text-dc">{{ albumDetail.publishTime.toDate() }}</span>
+          <span class="text-title">{{ albumDetail.publishTime.toDate() }}</span>
         </div>
       </div>
       <div class="gap-x-6">

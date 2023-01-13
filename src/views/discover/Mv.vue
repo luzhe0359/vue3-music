@@ -21,7 +21,7 @@ onMounted(async () => {
     <div v-for="item in personalizedMv" :key="item.id" @click="router.push({ name: 'mvDetail', query: { id: item.id } })">
       <CoverPlay :pic-url="item.picUrl" video :name="item.name" :play-count="item.playCount" show-play-count />
       <div class="truncate text-xs mt-2">{{ item.name }}</div>
-      <div class="truncate text-xs mt-1.5 text-slate-400">
+      <div class="truncate text-xs mt-1.5 text-title">
         <small>{{ item.artistName }}</small>
       </div>
     </div>

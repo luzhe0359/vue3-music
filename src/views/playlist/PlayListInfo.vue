@@ -20,12 +20,12 @@ const emit = defineEmits<{
       <div class="my-2 flex text-xs items-center">
         <el-avatar :src="playlist.creator.avatarUrl" size="small" round />
         <div class="mx-2 text-active">{{ playlist.creator.nickname }}</div>
-        <div class="flex text-dc">
+        <div class="flex text-tag">
           <div v-for="tag in playlist.tags" :key="tag" class="mr-2 hover-text">#{{ tag }}</div>
         </div>
-        <div class="ml-2 text-dc">{{ playlist.createTime.toDate() }}创建</div>
+        <div class="ml-2 text-tag">{{ playlist.createTime.toDate() }}创建</div>
       </div>
-      <div class="text-xs text-gray-500" leading-normal>
+      <div class="text-xs text-desc" leading-normal>
         <MoreText :text="playlist.description" :end="90" />
       </div>
       <div class="mt-2 text-xs flex">

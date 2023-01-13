@@ -128,7 +128,7 @@ onMounted(getData)
 <template>
   <div class="pb-5">
     <div v-for="option in options" :key="option.key" class="flex text-xs mb-5">
-      <div class="flex-shrink-0 leading-loose text-slate-400">{{ option.name }}:</div>
+      <div class="flex-shrink-0 leading-loose text-slate-400 dark:text-neutral-400">{{ option.name }}:</div>
       <div class="ml-3">
         <el-space wrap :size="5" :spacer="spacer">
           <el-button

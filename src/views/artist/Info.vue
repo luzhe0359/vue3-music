@@ -14,7 +14,7 @@ defineProps<{
       <div class="grid gap-y-2">
         <div class="text-2xl font-bold">{{ artistDetail.artist.name }}</div>
         <div class="text-sm">{{ artistDetail.identify.imageDesc }}</div>
-        <div class="text-xs flex">
+        <div class="text-xs flex text-title">
           <div>单曲数：{{ useNumberFormat(artistDetail.artist.musicSize) }}</div>
           <div class="ml-5">专辑数：{{ useNumberFormat(artistDetail.artist.albumSize) }}</div>
           <div class="ml-5">MV数：{{ useNumberFormat(artistDetail.artist.mvSize) }}</div>

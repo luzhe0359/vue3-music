@@ -23,8 +23,8 @@ onMounted(async () => {
     <Info :artist-detail="artistDetail" />
 
     <!-- <el-affix target=".artist-detail" :offset="56"> -->
-    <div class="bg-view mt-2">
-      <el-tabs v-model="currentTab" class="bg-view">
+    <div class="mt-2">
+      <el-tabs v-model="currentTab">
         <el-tab-pane lazy :label="`歌曲 ${artistDetail.artist.musicSize}`" name="music">
           <Songs />
         </el-tab-pane>

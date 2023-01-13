@@ -1,33 +1,22 @@
-.bg-main {
-  @apply bg-gray-50;
-  @apply dark:bg-[#171717];
+// .bg-main {
+//   @apply bg-gray-50 transition-all;
+//   @apply dark:bg-[#141414];
+// }
+
+// .hover-bg-main {
+//   @apply hover:bg-gray-200;
+//   @apply dark:hover:bg-[#262727];
+// }
+
+.bg-card {
+  @apply bg-gray-100 transition-all;
+  @apply dark:bg-[#222];
+  @apply dark:hover:bg-neutral-800;
 }
 
-.hover-bg-main {
-  @apply hover:bg-gray-200;
-  @apply dark:hover:bg-[#222];
-}
-
-.bg-dc {
-  @apply bg-gray-100;
-  @apply dark:bg-[#222222];
-}
-
-.bg-view {
-  @apply bg-white;
-  @apply dark:bg-[#171717];
-}
-
-.hover-bg-view {
-  @apply hover:bg-stone-100;
-  @apply dark:hover:bg-[#222];
-}
-
-.bg-active {
-  @apply bg-emerald-400 text-white;
-}
-.text-active {
-  @apply text-emerald-400;
+.hover-bg-card {
+  @apply hover:bg-gray-200 transition-all duration-300;
+  @apply dark:hover:bg-[#262727];
 }
 
 .text-main {
@@ -35,14 +24,23 @@
   @apply dark:text-slate-200;
 }
 
-.text-dc {
+.text-active {
+  @apply text-emerald-400;
+}
+
+.text-title {
   @apply text-slate-400;
-  @apply dark:text-slate-400;
+  @apply dark:text-[#999];
 }
 
 .text-desc {
   @apply text-slate-500;
-  @apply dark:text-gray-400;
+  @apply dark:text-neutral-400;
+}
+
+.text-tag {
+  @apply text-slate-400;
+  @apply dark:text-stone-500;
 }
 
 .button {
@@ -56,12 +54,8 @@
   @apply hover:border-emerald-500 hover:text-emerald-500;
 }
 
-.button-sm {
-  @apply h-7 text-xs;
-}
-
-.button-dc {
+.button-text {
   @apply flex bg-[#e6e6e6] rounded justify-center items-center h-8 text-sm transition-all cursor-pointer;
-  @apply dark:bg-[#303030] dark:text-white;
+  @apply dark:bg-[#333] dark:text-white;
   @apply hover:text-emerald-500;
 }
