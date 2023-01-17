@@ -121,3 +121,7 @@ body {
     @apply sticky top-0 z-10 bg-white dark:bg-[#141414] transition-all;
   }
 }
+
+.el-skeleton {
+  font-size: 0; // 骨架屏图片间隙
+}

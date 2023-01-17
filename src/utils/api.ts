@@ -52,6 +52,7 @@ export async function useBanner() {
   const { banners } = await http.get<{ banners: Banner[] }>('banner', {
     type: 0
   })
+  console.log(3)
   return banners
 }
 

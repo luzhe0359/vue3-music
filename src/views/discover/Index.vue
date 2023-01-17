@@ -6,13 +6,10 @@ import Mv from './Mv.vue'
 </script>
 
 <template>
-  <div class="px-5">
-    <h1 class="text-3xl font-bold pt-8 pb-4 select-none">推荐</h1>
-    <Banner :per-page="3" />
-    <Personalized />
-    <PersonalizedNewSong />
-    <Mv />
-  </div>
+  <Banner :per-page="3" />
+  <Personalized />
+  <PersonalizedNewSong />
+  <Mv />
 </template>
 
 <style scoped></style>

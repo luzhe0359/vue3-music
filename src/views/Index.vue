@@ -10,13 +10,13 @@ import PlayedList from '@/components/PlayedList.vue'
     <div class="w-56 h-screen flex-shrink-0">
       <Menu />
     </div>
-    <div class="flex-1 flex flex-col divider-shadow">
+    <div class="flex-1 flex flex-col">
       <div class="h-14">
         <Header />
       </div>
       <div class="flex-1 overflow-hidden">
         <ElScrollbar>
-          <div class="container mx-auto pb-5">
+          <div class="container mx-auto p-6">
             <RouterView />
           </div>
         </ElScrollbar>
@@ -29,9 +29,3 @@ import PlayedList from '@/components/PlayedList.vue'
 
   <PlayedList />
 </template>
-<style lang="scss" scoped>
-.divider-shadow {
-  /* box-shadow: -5px 0px 10px 2px #222 inset; */
-  box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.1) !important;
-}
-</style>

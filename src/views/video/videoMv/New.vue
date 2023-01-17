@@ -9,6 +9,7 @@ const areas: string[] = ['内地', '港台', '欧美', '日本', '韩国']
 const newMvList = ref<Mv[]>([])
 
 const changeArea = (area: string) => {
+  newMvList.value = []
   currentArea.value = area
   getData()
 }
@@ -26,14 +27,14 @@ onMounted(async () => {
 <template>
   <div class="flex items-center justify-between">
     <Title title="最新MV" class="mt-0" />
-
     <div class="flex gap-x-4">
       <el-button v-for="item in areas" :key="item" :type="item === currentArea ? 'primary' : ''" link round @click="changeArea(item)">
         {{ item }}
       </el-button>
     </div>
   </div>
-  <MvList :mv-list="newMvList" />
+
+  <MvList :mv-list="newMvList" :num="8" />
 </template>
 
 <style lang="scss"></style>

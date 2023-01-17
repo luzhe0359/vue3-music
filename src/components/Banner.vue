@@ -26,14 +26,29 @@ const onClick = (banner: Banner) => {
 </script>
 
 <template>
-  <Swiper slides-per-group-auto slides-per-view="auto" :navigation="true" :grab-cursor="true">
-    <SwiperSlide v-for="item in banners" :key="item.bannerId">
-      <img :src="item.imageUrl" class="banner-image" @click="onClick(item)" />
-    </SwiperSlide>
-  </Swiper>
+  <el-skeleton class="w-full" :loading="!banners.length" animated>
+    <template #template>
+      <div class="grid grid-flow-row grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-5">
+        <el-skeleton-item variant="image" class="skeleton-item" />
+        <el-skeleton-item variant="image" class="skeleton-item !hidden lg:!flex" />
+        <el-skeleton-item variant="image" class="skeleton-item !hidden xl:!flex" />
+        <el-skeleton-item variant="image" class="skeleton-item !hidden 2xl:!flex" />
+      </div>
+    </template>
+    <template #default>
+      <Swiper slides-per-group-auto slides-per-view="auto" :navigation="true" :grab-cursor="true">
+        <SwiperSlide v-for="item in banners" :key="item.bannerId">
+          <img :src="item.imageUrl" class="banner-image" @click="onClick(item)" />
+        </SwiperSlide>
+      </Swiper>
+    </template>
+  </el-skeleton>
 </template>
 
 <style lang="scss" scoped>
+.skeleton-item {
+  @apply aspect-[27/10] w-full h-auto rounded-lg;
+}
 .swiper {
   @apply -mx-2.5;
   .swiper-slide {
