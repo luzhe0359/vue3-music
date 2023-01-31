@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import { onMounted, ref, reactive, toRefs, computed } from 'vue'
+import { useRouter } from 'vue-router'
 import { Right } from '@icon-park/vue-next'
 import { useVideoStore } from '@/stores/video'
 import type { Video } from '@/models/video'
 import { useVideoGroup } from '@/utils/api'
 import IconPark from '@/components/IconPark.vue'
 import CoverPlay from '@/components/CoverPlay.vue'
+
+const router = useRouter()
 
 const { videoGroup } = toRefs(useVideoStore())
 const { getVideoGroup } = useVideoStore()
@@ -97,7 +100,7 @@ onMounted(() => {
     class="grid grid-flow-row grid-cols-2 lg:grid-cols-4 gap-5 mt-5"
   >
     <div v-for="{ data } in videoList" :key="data.vid">
-      <CoverPlay :pic-url="data.coverUrl || data.liveData.liveRoom.coverUrl" video />
+      <CoverPlay :pic-url="data.coverUrl || data.liveData.liveRoom.coverUrl" video @click="router.push(`/videoDetail/${data.vid}`)" />
       <div class="text-xs mt-3 truncate">{{ data.title || data.liveData.liveRoom.title }}</div>
     </div>
   </div>

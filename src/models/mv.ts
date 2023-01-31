@@ -31,4 +31,21 @@ export interface Mv {
 export interface MvArtists {
   id: number
   name: string
+  alias?: []
+  transNames?: null
+}
+
+export interface SimiMv {
+  id: number
+  cover: string
+  name: string
+  playCount: number
+  briefDesc: string
+  desc: null
+  artistName: string
+  artistId: number
+  duration: number
+  mark: number
+  artists: MvArtists[]
+  alg: string
 }

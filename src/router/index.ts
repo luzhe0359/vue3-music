@@ -100,8 +100,8 @@ const routes: Array<RouteRecordRaw> = [
           },
           {
             path: 'mv',
-            name: 'videoMv',
-            component: () => import('@/views/video/videoMv/Index.vue'),
+            name: 'mvList',
+            component: () => import('@/views/mv/mvList/Index.vue'),
             meta: {
               menu: 'video',
               title: 'mv',
@@ -136,9 +136,14 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/album/Index.vue')
       },
       {
-        path: 'mvDetail',
+        path: 'mvDetail/:id?',
         name: 'mvDetail',
-        component: () => import('@/views/mv/MvDetail.vue')
+        component: () => import('@/views/mv/MvDetail/index.vue')
+      },
+      {
+        path: 'videoDetail/:id?',
+        name: 'videoDetail',
+        component: () => import('@/views/video/videoDetail/index.vue')
       }
     ]
   }

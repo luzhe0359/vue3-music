@@ -3,15 +3,18 @@ import { PlayOne, Play, Headset } from '@icon-park/vue-next'
 import IconPark from '@/components/IconPark.vue'
 import { useNumberFormat, useFormatDuring } from '@/utils/number'
 
-defineProps<{
-  picUrl: string
-  playCount?: number
-  name?: string
-  showPlayCount?: boolean
-  onPlay?: () => void
-  video?: boolean
-  duration?: number | 0
-}>()
+withDefaults(
+  defineProps<{
+    picUrl: string
+    playCount?: number
+    name?: string
+    showPlayCount?: boolean
+    onPlay?: () => void
+    video?: boolean
+    duration?: number
+  }>(),
+  { duration: 0 }
+)
 </script>
 
 <template>

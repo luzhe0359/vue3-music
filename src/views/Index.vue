@@ -1,8 +1,11 @@
 <script lang="ts" setup>
+import { useRoute } from 'vue-router'
 import Menu from '@/layout/menu/Menu.vue'
 import Header from '@/layout/header/Header.vue'
 import Footer from '@/layout/footer/Footer.vue'
 import PlayedList from '@/components/PlayedList.vue'
+
+const route = useRoute()
 </script>
 
 <template>
@@ -17,7 +20,7 @@ import PlayedList from '@/components/PlayedList.vue'
       <div class="flex-1 overflow-hidden">
         <ElScrollbar>
           <div class="container mx-auto p-6">
-            <RouterView />
+            <RouterView :key="route.fullPath" />
           </div>
         </ElScrollbar>
       </div>

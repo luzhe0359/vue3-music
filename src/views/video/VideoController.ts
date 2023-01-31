@@ -14,7 +14,7 @@ export function useVideoMenu() {
     },
     {
       label: 'MV',
-      name: 'videoMv'
+      name: 'mvList'
     }
   ]
 

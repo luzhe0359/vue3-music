@@ -11,8 +11,9 @@ import type { Artist } from '@/models/artist'
 import type { ArtistDesc, ArtistDetail } from '@/models/artist_detail'
 import type { Album } from '@/models/album'
 import type { PersonalizedPrivateContent, Video, VideoGroup } from '@/models/video'
+import type { VideoDetail, VideoUrl, SimiVideo } from '@/models/video_detail'
 import type { SearchHotDetail, SearchSuggest } from '@/models/search'
-import type { MvUrl, Mv, MvDetail } from '@/models/mv'
+import type { MvUrl, Mv, MvDetail, SimiMv } from '@/models/mv'
 import type { PlayListHot } from '@/models/playlist_hot'
 import type { UserProfile } from '@/models/user'
 import type { TopSong } from '@/models/top_song'
@@ -285,5 +286,29 @@ export async function useExclusiveMv(limit = 10, offset = 0) {
 // mv详情
 export async function useMvDetail(mvid: number) {
   const { data } = await http.get<{ data: MvDetail }>('mv/detail', { mvid })
+  return data
+}
+
+// 相似mv
+export async function useSimiMv(mvid: number) {
+  const { mvs } = await http.get<{ mvs: SimiMv[] }>('simi/mv', { mvid })
+  return mvs
+}
+
+// video详情
+export async function useVideoDetail(id: string) {
+  const { data } = await http.get<{ data: VideoDetail }>('video/detail', { id })
+  return data
+}
+
+// video播放地址
+export async function useVideoUrl(id: string) {
+  const { urls } = await http.get<{ urls: VideoUrl[] }>('video/url', { id })
+  return urls[0]
+}
+
+// 相似video
+export async function useSimiVideo(id: string) {
+  const { data } = await http.get<{ data: SimiVideo[] }>('related/allvideo', { id })
   return data
 }

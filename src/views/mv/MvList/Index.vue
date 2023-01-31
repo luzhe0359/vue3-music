@@ -5,11 +5,9 @@ import Exclusive from './Exclusive.vue'
 </script>
 
 <template>
-  <div class="">
-    <New />
-    <Hot />
-    <Exclusive />
-  </div>
+  <New />
+  <Hot />
+  <Exclusive />
 </template>
 
 <style lang="scss"></style>

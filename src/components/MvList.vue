@@ -4,10 +4,13 @@ import type { Mv } from '@/models/mv'
 import type { PersonalizedMv } from '@/models/personalized'
 import CoverPlay from '@/components/CoverPlay.vue'
 
-defineProps<{
-  mvList: Mv[] | PersonalizedMv[]
-  num: number | 4 // 骨架屏数量
-}>()
+withDefaults(
+  defineProps<{
+    mvList: Mv[] | PersonalizedMv[]
+    num?: number // 骨架屏数量
+  }>(),
+  { num: 4 }
+)
 
 const router = useRouter()
 </script>
@@ -25,7 +28,7 @@ const router = useRouter()
     </template>
     <template #default>
       <div class="grid grid-flow-row grid-cols-2 lg:grid-cols-4 gap-5">
-        <div v-for="item in mvList" :key="item.id" @click="router.push({ name: 'mvDetail', query: { id: item.id } })">
+        <div v-for="item in mvList" :key="item.id" @click="router.push(`/mvDetail/${item.id}`)">
           <CoverPlay
             :pic-url="(item as Mv).cover || (item as PersonalizedMv).picUrl"
             video
