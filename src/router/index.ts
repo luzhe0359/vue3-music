@@ -113,7 +113,7 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: 'dj',
         name: 'dj',
-        component: () => import('@/views/dj/DJ.vue'),
+        component: () => import('@/views/dj/Index.vue'),
         meta: {
           menu: 'dj',
           title: '电台',

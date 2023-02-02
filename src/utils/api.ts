@@ -17,6 +17,7 @@ import type { MvUrl, Mv, MvDetail, SimiMv } from '@/models/mv'
 import type { PlayListHot } from '@/models/playlist_hot'
 import type { UserProfile } from '@/models/user'
 import type { TopSong } from '@/models/top_song'
+import type { DjPersonalize, DjTodayPerfered, DjNewcomer, DjPay } from '@/models/dj'
 
 export async function useLogin(phone: string, password: string) {
   return await http.get<{
@@ -311,4 +312,46 @@ export async function useVideoUrl(id: string) {
 export async function useSimiVideo(id: string) {
   const { data } = await http.get<{ data: SimiVideo[] }>('related/allvideo', { id })
   return data
+}
+
+// dj个性推荐
+export async function useDjPersonalize() {
+  const { data } = await http.get<{ data: DjPersonalize[] }>('dj/personalize/recommend')
+  return data
+}
+
+// dj今日优选
+export async function useDjTodayPerfered() {
+  const { data } = await http.get<{ data: DjTodayPerfered[] }>('dj/today/perfered')
+  return data
+}
+
+// dj主播新人榜
+export async function useDjNewcomer() {
+  const { data } = await http.get<{
+    data: {
+      list: DjNewcomer[]
+    }
+  }>('dj/toplist/newcomer?limit=10')
+  return data.list
+}
+
+// dj最热主播榜
+export async function useDjPopular() {
+  const { data } = await http.get<{
+    data: {
+      list: DjNewcomer[]
+    }
+  }>('dj/toplist/popular?limit=10')
+  return data.list
+}
+
+// dj付费精品
+export async function useDjPay() {
+  const { data } = await http.get<{
+    data: {
+      list: DjPay[]
+    }
+  }>('dj/toplist/pay?limit=10')
+  return data.list
 }
