@@ -29,7 +29,7 @@ onMounted(getData)
         <div v-for="item in djTodayList" :key="item.id">
           <CoverPlay :pic-url="item.picUrl" video :name="item.name" :play-count="0" />
           <div class="truncate text-xs mt-2">{{ item.name }}</div>
-          <div class="truncate text-xs mt-2 text-title">{{ item.category }}</div>
+          <div class="truncate text-xs mt-2 text-title">{{ item.rcmdText }}</div>
         </div>
       </div>
     </template>

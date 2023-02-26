@@ -7,7 +7,7 @@ import type { PlayListCat } from '@/models/playlist_cat'
 import type { Song } from '@/models/song'
 import type { SongUrl } from '@/models/song_url'
 import type { TopListDetail } from '@/models/toplist_detail'
-import type { Artist } from '@/models/artist'
+import type { Artist, Mvs } from '@/models/artist'
 import type { ArtistDesc, ArtistDetail } from '@/models/artist_detail'
 import type { Album } from '@/models/album'
 import type { PersonalizedPrivateContent, Video, VideoGroup } from '@/models/video'
@@ -135,7 +135,7 @@ export async function useArtistAlbum(id: number, limit = 10, offset = 0) {
 }
 
 export async function useArtistMv(id: number, limit = 10, offset = 0) {
-  return await http.get<{ mvs: Mv[]; hasMore: boolean }>('artist/mv', {
+  return await http.get<{ mvs: Mvs[]; hasMore: boolean }>('artist/mv', {
     id: id,
     limit: limit,
     offset: offset

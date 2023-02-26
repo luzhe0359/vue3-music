@@ -9,7 +9,6 @@ withDefaults(
     playCount?: number
     name?: string
     showPlayCount?: boolean
-    onPlay?: () => void
     video?: boolean
     duration?: number
   }>(),
@@ -21,13 +20,7 @@ withDefaults(
   <div class="cover-play-image" :class="{ 'aspect-square': !video, 'aspect-video': video }">
     <el-image :src="picUrl" :alt="name" class="w-full bg-gray-50 object-cover" />
     <div class="mask flex justify-center items-center">
-      <IconPark
-        :icon="PlayOne"
-        theme="filled"
-        class="text-white play-icon opacity-0 transition-opacity hover:text-teal-400"
-        :size="50"
-        @click="onPlay"
-      />
+      <IconPark :icon="PlayOne" theme="filled" class="text-white play-icon opacity-0 transition-opacity hover:text-teal-400" :size="50" />
     </div>
     <div v-if="video && duration" class="play-count">
       <text>{{ useFormatDuring(duration / 1000 || 0) }} </text>

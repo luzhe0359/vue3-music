@@ -13,6 +13,38 @@ export interface MvUrl {
   msg: string
 }
 
+export interface MvDetail {
+  id: number
+  name: string
+  artistId: number
+  artistName: string
+  briefDesc: string
+  desc: string
+  cover: string
+  coverId_str: string
+  coverId: number
+  playCount: number
+  subCount: number
+  shareCount: number
+  commentCount: number
+  duration: number
+  nType: number
+  publishTime: string
+  price: null
+  brs: any[]
+  artists: MvDetailArtists[]
+  alias: any[]
+  commentThreadId: string
+  videoGroup: any[]
+}
+
+export interface MvDetailArtists {
+  id: number
+  name: string
+  followed: boolean
+  img1v1Url: string
+}
+
 export interface Mv {
   id: number
   cover: string

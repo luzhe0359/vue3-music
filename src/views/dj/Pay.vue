@@ -17,7 +17,7 @@ onMounted(getData)
   <Title title="付费精品" class="mt-5" />
   <el-skeleton class="w-full" :loading="!djPayList.length" animated>
     <template #template>
-      <div class="grid grid-flow-row lg:grid-cols-5 2xl:grid-cols-10 gap-5">
+      <div class="grid grid-flow-row grid-cols-5 2xl:grid-cols-10 gap-5">
         <div v-for="item in 6" :key="item" class="flex flex-col">
           <el-skeleton-item variant="image" class="aspect-square !w-full !h-auto" />
           <el-skeleton-item variant="p" class="mt-2 !w-2/3" />
@@ -26,7 +26,7 @@ onMounted(getData)
       </div>
     </template>
     <template #default>
-      <div class="grid grid-flow-row lg:grid-cols-5 2xl:grid-cols-10 gap-5">
+      <div class="grid grid-flow-row grid-cols-5 2xl:grid-cols-10 gap-5">
         <div v-for="item in djPayList" :key="item.id">
           <CoverPlay :pic-url="item.picUrl" :name="item.name" :play-count="0" />
           <div class="truncate text-xs mt-2">{{ item.name }}</div>

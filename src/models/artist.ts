@@ -30,3 +30,16 @@ export interface Mv {
   publishTime: string
   subed: boolean
 }
+
+export interface Mvs {
+  artistName: string
+  duration: number
+  id: number
+  imgurl: string
+  imgurl16v9: string
+  name: string
+  playCount: number
+  publishTime: string
+  status: number
+  subed: boolean
+}

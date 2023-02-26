@@ -60,7 +60,7 @@ String.prototype.toInt = function (this: string): number {
 }
 
 String.prototype.trimEnd = function (this: string, chars = ' '): string {
-  return trimEnd(this, chars)
+  return trimEnd(this, chars as string)
 }
 
 Number.prototype.toDate = function (this: number, format = 'YYYY-MM-DD'): string {

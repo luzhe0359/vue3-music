@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { ref, reactive, computed, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
-import type { Mv } from '@/models/artist'
+import type { Mvs } from '@/models/artist'
 import CoverPlay from '@/components/CoverPlay.vue'
 import { useArtistMv } from '@/utils/api'
 
 const route = useRoute()
 const id = Number(route.query.id)
 
-const list = ref<Mv[]>([])
+const list = ref<Mvs[]>([])
 const pageData = reactive({
   page: 1,
   limit: 40,
