@@ -67,14 +67,14 @@ pnpm run dev
 
 ## 四、UI 界面
 
-![discover.jpg](ui/008-01.jpg)
+![discover.jpg](public/ui/008-01.jpg)
 
-![music.jpg](ui/008-02.jpg)
+![music.jpg](public/ui/008-02.jpg)
 
-![video.jpg](ui/008-03.jpg)
+![video.jpg](public/ui/008-03.jpg)
 
-![dj.jpg](ui/008-04.jpg)
+![dj.jpg](public/ui/008-04.jpg)
 
-![_music.jpg](ui/008-05.jpg)
+![_music.jpg](public/ui/008-05.jpg)
 
-![_dj.jpg](ui/008-06.jpg)
+![_dj.jpg](public/ui/008-06.jpg)
