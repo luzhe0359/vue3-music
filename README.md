@@ -14,6 +14,8 @@
 
 参考 [SmallRuralDog/vue3-music](https://github.com/SmallRuralDog/vue3-music) 进行开发、改进和完善。
 
+在线体验：[https://m.zugelu.com/](https://m.zugelu.com/)
+
 如果觉得项目不错，欢迎 Star 支持，感谢！
 
 ## 本地安装
@@ -37,16 +39,42 @@ pnpm run dev
 - [x] 二维码登录
 - [x] 主题切换
 
-推荐
+**推荐**
 
 - [x] 专属歌单
 - [x] 推荐新音乐
 - [x] 推荐 MV
 
-音乐馆
+**音乐馆**
 
 - [x] 精选
 - [x] 歌单
 - [x] 排行榜
 - [x] 歌手
 - [x] 新歌速递
+
+**视频**
+
+- [x] 视频列表
+- [x] mv 列表
+
+**电台**
+
+- [x] 推荐电台
+- [x] 最热主播榜
+- [x] 主播新人榜
+- [x] 付费精品
+
+## 四、UI 界面
+
+![discover.jpg](ui/008-01.jpg)
+
+![music.jpg](ui/008-02.jpg)
+
+![video.jpg](ui/008-03.jpg)
+
+![dj.jpg](ui/008-04.jpg)
+
+![_music.jpg](ui/008-05.jpg)
+
+![_dj.jpg](ui/008-06.jpg)
